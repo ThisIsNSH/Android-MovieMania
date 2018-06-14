@@ -1,4 +1,4 @@
-package com.travis.android.wv;
+package com.travis.android.Movie;
 
 import org.junit.Test;
 

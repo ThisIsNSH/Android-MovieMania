@@ -1,7 +1,6 @@
-package com.travis.android.wv;
+package com.travis.android.Movie;
 
 import android.Manifest;
-import android.app.Activity;
 import android.app.DownloadManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -10,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.webkit.DownloadListener;
 import android.webkit.WebChromeClient;
@@ -18,10 +18,10 @@ import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 /**
- * Created by LENOVO on 10-06-2018.
+ * Created by Abhinav on 10-06-2018.
  */
 
-public class download1 extends Activity {
+public class download1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
