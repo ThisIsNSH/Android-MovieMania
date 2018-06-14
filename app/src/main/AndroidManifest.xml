@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:parentActivityName=".MainActivity"
-            android:name=".MainActivity">
+            android:parentActivityName="com.travis.android.wv.MainActivity"
+            android:name="com.travis.android.wv.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,12 +19,12 @@
 
             </intent-filter>
         </activity>
-        <activity android:name=".download1"
-            android:parentActivityName=".MainActivity">
+        <activity android:name="com.travis.android.wv.download1"
+            android:parentActivityName="com.travis.android.wv.MainActivity">
         </activity>
 
-        <activity android:name=".video"
-            android:parentActivityName=".MainActivity">
+        <activity android:name="com.travis.android.wv.video"
+            android:parentActivityName="com.travis.android.wv.MainActivity">
         </activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
