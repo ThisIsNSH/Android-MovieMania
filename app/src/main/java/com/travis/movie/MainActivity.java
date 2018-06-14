@@ -1,4 +1,4 @@
-package com.travis.android.Movie;
+package com.travis.movie;
 
 import android.content.Intent;
 import android.os.Bundle;

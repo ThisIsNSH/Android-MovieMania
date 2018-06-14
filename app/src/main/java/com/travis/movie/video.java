@@ -1,4 +1,4 @@
-package com.travis.android.Movie;
+package com.travis.movie;
 
 import android.media.MediaPlayer;
 import android.net.Uri;
