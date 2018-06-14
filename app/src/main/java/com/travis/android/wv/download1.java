@@ -77,7 +77,7 @@ public class download1 extends Activity {
             }
         });
 //        Load the webpage
-        browser.loadUrl("http://wapbestmovie.xyz/load/Full_Movies/Bollywood_Movies_2018/Padman%202018%20Dvdrip/MP4%20HQ/Padman%202018%20Dvdrip%20Hq%20Part1.mp4");
+        browser.loadUrl("http://dl1.upload08.com/files/Film/2018/Backstabbing%20for%20Beginners%202018/Backstabbing.for.Beginners.2018.720p.BRrip.YIFY.FardaDL.mkv");
 
     }
 }
