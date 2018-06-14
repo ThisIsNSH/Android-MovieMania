@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.travis.android.wv">
+    package="com.travis.movie">
 
     <application
         android:allowBackup="true"
@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:parentActivityName="com.travis.android.wv.MainActivity"
-            android:name="com.travis.android.wv.MainActivity">
+            android:parentActivityName="com.travis.android.Movie.MainActivity"
+            android:name="com.travis.android.Movie.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,12 +19,12 @@
 
             </intent-filter>
         </activity>
-        <activity android:name="com.travis.android.wv.download1"
-            android:parentActivityName="com.travis.android.wv.MainActivity">
+        <activity android:name="com.travis.android.Movie.download1"
+            android:parentActivityName="com.travis.android.Movie.MainActivity">
         </activity>
 
-        <activity android:name="com.travis.android.wv.video"
-            android:parentActivityName="com.travis.android.wv.MainActivity">
+        <activity android:name="com.travis.android.Movie.video"
+            android:parentActivityName="com.travis.android.Movie.MainActivity">
         </activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
