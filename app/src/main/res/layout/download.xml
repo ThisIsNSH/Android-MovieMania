@@ -15,7 +15,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DOWNLOADING"
         android:layout_gravity="center"
-        />
+        android:text="DOWNLOADING! PLZ WAIT"
+        android:paddingTop="100dp"
+        android:textColor="@color/colorPrimaryDark"/>
 </LinearLayout>
