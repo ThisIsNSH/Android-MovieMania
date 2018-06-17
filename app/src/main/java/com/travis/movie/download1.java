@@ -1,7 +1,6 @@
-package com.travis.android.wv;
+package com.travis.movie;
 
 import android.Manifest;
-import android.app.Activity;
 import android.app.DownloadManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -10,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.webkit.DownloadListener;
 import android.webkit.WebChromeClient;
@@ -18,10 +18,10 @@ import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 /**
- * Created by LENOVO on 10-06-2018.
+ * Created by Abhinav on 10-06-2018.
  */
 
-public class download1 extends Activity {
+public class download1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -77,7 +77,7 @@ public class download1 extends Activity {
             }
         });
 //        Load the webpage
-        browser.loadUrl("http://wapbestmovie.xyz/load/Full_Movies/Bollywood_Movies_2018/Padman%202018%20Dvdrip/MP4%20HQ/Padman%202018%20Dvdrip%20Hq%20Part1.mp4");
+        browser.loadUrl("http://dl1.upload08.com/files/Film/2018/Backstabbing%20for%20Beginners%202018/Backstabbing.for.Beginners.2018.720p.BRrip.YIFY.FardaDL.mkv");
 
     }
 }
