@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.travis.android.Movie.MainActivity"
+    tools:context="com.travis.movie.MainActivity"
     android:fillViewport="true"
     android:scrollbars="vertical"
     >
@@ -14,9 +14,40 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginLeft="8dp"
+            android:textSize="16dp"
+            android:fontFamily="sans-serif"
+            android:id="@+id/title"
+android:layout_weight="1"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16dp"
+            android:fontFamily="sans-serif"
+            android:id="@+id/dura"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+android:layout_below="@id/title"
+            android:layout_above="@id/image"
+            />
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:layout_margin="20dp"
     android:id="@+id/image">
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,6 +55,8 @@
         android:layout_weight="1"
         android:id="@+id/download"
         />
+
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,6 +77,7 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="68dp" />
     </RelativeLayout>
+
 
 
 </android.support.constraint.ConstraintLayout>
