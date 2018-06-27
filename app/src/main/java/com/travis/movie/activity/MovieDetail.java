@@ -1,4 +1,4 @@
-package com.travis.movie;
+package com.travis.movie.activity;
 
 import android.animation.ObjectAnimator;
 import android.content.ActivityNotFoundException;
@@ -20,6 +20,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.jgabrielfreitas.core.BlurImageView;
+import com.travis.movie.extra.OnSwipeTouchListener;
+import com.travis.movie.R;
 
 public class MovieDetail extends AppCompatActivity {
 

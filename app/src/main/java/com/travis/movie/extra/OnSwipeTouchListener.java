@@ -1,4 +1,4 @@
-package com.travis.movie;
+package com.travis.movie.extra;
 
 import android.content.Context;
 import android.view.GestureDetector;

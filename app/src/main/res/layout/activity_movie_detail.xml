@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.travis.movie.MovieDetail">
+    tools:context="com.travis.movie.activity.MovieDetail">
 
     <com.jgabrielfreitas.core.BlurImageView
         android:id="@+id/back"
@@ -29,7 +29,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="48dp"
             android:visibility="visible"
-            app:cardBackgroundColor="#fff"
+            app:cardBackgroundColor="#00000fff"
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp"
             app:cardPreventCornerOverlap="true"
@@ -41,6 +41,7 @@
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:background="#000"
+                android:transitionName="@string/trans1"
                 android:scaleType="fitCenter"
                 android:src="@drawable/sample" />
 
@@ -83,12 +84,14 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:ems="8"
+            android:transitionName="@string/trans2"
             android:fontFamily="@font/psb"
             android:text="Jurassic World: Fallen Kingdom"
             android:textColor="#fff"
             android:textSize="35sp" />
 
         <TextView
+            android:transitionName="@string/trans3"
             android:id="@+id/release"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
