@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:scrollbars="vertical"
-    tools:context="com.travis.movie.MainActivity">
+    tools:context="com.travis.movie.activity.MovieMain$MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

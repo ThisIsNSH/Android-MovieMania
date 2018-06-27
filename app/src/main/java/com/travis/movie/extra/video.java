@@ -1,4 +1,4 @@
-package com.travis.movie;
+package com.travis.movie.extra;
 
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.MediaController;
 import android.widget.ProgressBar;
 import android.widget.VideoView;
+
+import com.travis.movie.R;
 
 /**
  * Created by Abhinav on 10-06-2018.

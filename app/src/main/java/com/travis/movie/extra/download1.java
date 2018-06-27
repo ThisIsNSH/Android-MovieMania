@@ -1,4 +1,4 @@
-package com.travis.movie;
+package com.travis.movie.extra;
 
 import android.Manifest;
 import android.app.DownloadManager;
@@ -16,6 +16,8 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
+
+import com.travis.movie.R;
 
 /**
  * Created by Abhinav on 10-06-2018.
