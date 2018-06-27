@@ -1,70 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.travis.movie.MainActivity"
     android:fillViewport="true"
     android:scrollbars="vertical"
-    >
+    tools:context="com.travis.movie.MainActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_marginTop="8dp"
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
-            android:layout_marginLeft="8dp"
-            android:textSize="16dp"
-            android:fontFamily="sans-serif"
-            android:id="@+id/title"
-android:layout_weight="1"
-            />
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_marginTop="8dp"
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:text=""
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/dura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/image"
+                android:layout_below="@id/title"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:text=""
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/image"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="16dp"
-            android:fontFamily="sans-serif"
-            android:id="@+id/dura"
-            android:layout_marginLeft="8dp"
-            android:layout_weight="1"
-android:layout_below="@id/title"
-            android:layout_above="@id/image"
-            />
-</LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_margin="20dp"
-    android:id="@+id/image">
+            android:layout_margin="20dp"
+            android:orientation="horizontal">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Download"
-        android:layout_weight="1"
-        android:id="@+id/download"
-        />
+            <Button
+                android:id="@+id/download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Download" />
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="playonline"
-        android:layout_weight="1"
-        android:id="@+id/playonline"
-        />
-</LinearLayout>
+            <Button
+                android:id="@+id/playonline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="playonline" />
+        </LinearLayout>
 
         <ImageView
             android:layout_width="match_parent"
@@ -72,12 +70,10 @@ android:layout_below="@id/title"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/image"
-            android:background="@drawable/m3"
             android:paddingTop="200dp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="68dp" />
     </RelativeLayout>
-
 
 
 </android.support.constraint.ConstraintLayout>
