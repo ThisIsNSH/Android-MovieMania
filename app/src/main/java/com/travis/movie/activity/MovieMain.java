@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -19,8 +20,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.ramotion.cardslider.CardSliderLayoutManager;
-import com.ramotion.cardslider.CardSnapHelper;
+import com.ramotion.directselect.DSListView;
+import com.travis.movie.AdvancedExampleCountryAdapter;
+import com.travis.movie.AdvancedExampleCountryPOJO;
 import com.travis.movie.R;
 import com.travis.movie.adapter.MovieAdapter;
 import com.travis.movie.extra.download1;
@@ -42,8 +44,8 @@ public class MovieMain extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.KITKAT)
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         setContentView(R.layout.activity_movie_main);
         initUI();
     }
@@ -55,11 +57,19 @@ public class MovieMain extends AppCompatActivity {
     }
 
     public void setupData() {
+
+        List<AdvancedExampleCountryPOJO> exampleDataSet = AdvancedExampleCountryPOJO.getExampleDataset();
+
+        // Create adapter with our dataset
+        ArrayAdapter<AdvancedExampleCountryPOJO> adapter = new AdvancedExampleCountryAdapter(
+                this, R.layout.advanced_example_country_list_item, exampleDataSet);
+
+        // Set adapter to our DSListView
+        DSListView<AdvancedExampleCountryPOJO> pickerView = findViewById(R.id.ds_county_list);
+        pickerView.setAdapter(adapter);
+
         movieList = new ArrayList<>();
         movieAdapter = new MovieAdapter(MovieMain.this, movieList);
-//        CardSliderLayoutManager cardSliderLayoutManager = new CardSliderLayoutManager(this);
-//        movie.setLayoutManager(cardSliderLayoutManager);
-//        new CardSnapHelper().attachToRecyclerView(movie);
         LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext());
         llm.setOrientation(LinearLayoutManager.HORIZONTAL);
         movie.setLayoutManager(llm);
