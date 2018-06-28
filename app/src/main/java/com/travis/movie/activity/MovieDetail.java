@@ -9,6 +9,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -20,6 +22,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.jgabrielfreitas.core.BlurImageView;
+import com.travis.movie.adapter.Genre;
 import com.travis.movie.extra.OnSwipeTouchListener;
 import com.travis.movie.R;
 
@@ -32,6 +35,36 @@ public class MovieDetail extends AppCompatActivity {
     TextView title, runtime, release, revenue;
     ImageView mainImage;
     BlurImageView backImage;
+    Context context;
+    RecyclerView recyclerView;
+    RelativeLayout relativeLayout;
+    RecyclerView.Adapter recyclerViewAdapter;
+    RecyclerView.LayoutManager recylerViewLayoutManager;
+    String[] subjects =
+            {
+                    "ANDROID",
+                    "PHP",
+                    "BLOGGER",
+                    "WORDPRESS",
+                    "JOOMLA",
+                    "ASP.NET",
+                    "JAVA",
+                    "C++",
+                    "MATHS",
+                    "HINDI",
+                    "ENGLISH",
+                    "ANDROID",
+                    "PHP",
+                    "BLOGGER",
+                    "WORDPRESS",
+                    "JOOMLA",
+                    "ASP.NET",
+                    "JAVA",
+                    "C++",
+                    "MATHS",
+                    "HINDI",
+                    "ENGLISH"
+            };
 
     public static void watchYoutubeVideo(Context context, String id) {
         Intent appIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
@@ -51,6 +84,19 @@ public class MovieDetail extends AppCompatActivity {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         setContentView(R.layout.activity_movie_detail);
         initUI();
+        context = getApplicationContext();
+
+        relativeLayout = (RelativeLayout) findViewById(R.id.detailLayout);
+
+        recyclerView = (RecyclerView) findViewById(R.id.genre);
+
+        recylerViewLayoutManager = new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false);
+
+        recyclerView.setLayoutManager(recylerViewLayoutManager);
+
+        recyclerViewAdapter = new Genre(context, subjects);
+
+        recyclerView.setAdapter(recyclerViewAdapter);
         holder.setOnTouchListener(new OnSwipeTouchListener(MovieDetail.this) {
 
             public void onSwipeLeft() {

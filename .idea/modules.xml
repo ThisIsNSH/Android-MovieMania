@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SummerProject.iml" filepath="$PROJECT_DIR$/SummerProject.iml" />
+      <module fileurl="file://E:\SummerProject\SummerProject.iml" filepath="E:\SummerProject\SummerProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://E:\SummerProject\app\app.iml" filepath="E:\SummerProject\app\app.iml" />
     </modules>
   </component>
 </project>
