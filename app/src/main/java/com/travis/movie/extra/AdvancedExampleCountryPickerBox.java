@@ -1,4 +1,4 @@
-package com.travis.movie;
+package com.travis.movie.extra;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ramotion.directselect.DSAbstractPickerBox;
+import com.travis.movie.model.AdvancedExampleCountryPOJO;
+import com.travis.movie.R;
 
 /**
  * Created by ThisIsNSH on 6/28/2018.

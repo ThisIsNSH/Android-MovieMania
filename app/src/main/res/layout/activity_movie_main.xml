@@ -21,7 +21,7 @@
         ds:selector_background="@drawable/ds_bg_list_selector" />
 
 
-    <com.travis.movie.AdvancedExampleCountryPickerBox
+    <com.travis.movie.extra.AdvancedExampleCountryPickerBox
         android:id="@+id/ds_country_picker"
         android:background="@drawable/ds_bg_picker_box"
         android:layout_width="match_parent"

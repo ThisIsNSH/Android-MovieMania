@@ -1,4 +1,4 @@
-package com.travis.movie;
+package com.travis.movie.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.travis.movie.model.AdvancedExampleCountryPOJO;
+import com.travis.movie.R;
 
 import java.util.List;
 

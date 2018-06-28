@@ -21,9 +21,6 @@
         </activity>
         <activity android:name=".extra.download1" />
         <activity android:name=".extra.video" />
-        <activity
-            android:name=".activity.MovieDetail"
-            android:exported="true" />
         <activity android:name=".activity.MovieMain" android:exported="true"></activity>
     </application>
 

@@ -1,4 +1,6 @@
-package com.travis.movie;
+package com.travis.movie.model;
+
+import com.travis.movie.R;
 
 import java.util.Arrays;
 import java.util.List;
