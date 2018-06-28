@@ -1,6 +1,7 @@
 package com.travis.movie.activity;
 
 import android.animation.ObjectAnimator;
+import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -14,10 +15,12 @@ import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jgabrielfreitas.core.BlurImageView;
 import com.travis.movie.extra.OnSwipeTouchListener;
@@ -145,5 +148,21 @@ public class MovieDetail extends AppCompatActivity {
         card = findViewById(R.id.card);
         button = findViewById(R.id.play);
         holder = findViewById(R.id.holder);
+    }
+    public void webapp(View V)
+    {
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.activity_movie_detail);
+        dialog.setTitle("WebApp");
+
+        TextView text = (TextView) dialog.findViewById(R.id.title);
+        title.setText("About Movie!");
+        // Set On ClickListener
+        title.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+              dialog.show();
+            }
+        });
     }
 }

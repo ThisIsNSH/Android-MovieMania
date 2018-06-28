@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MovieMain$MainActivity">
+        <activity android:name=".activity.MovieDetail">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,7 @@
         <activity android:name=".extra.download1" />
         <activity android:name=".extra.video" />
         <activity
-            android:name=".activity.MovieDetail"
+            android:name=".activity.MovieMain$MainActivity"
             android:exported="true" />
         <activity android:name=".activity.MovieMain" android:exported="true"></activity>
     </application>

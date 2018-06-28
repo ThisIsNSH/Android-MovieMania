@@ -88,7 +88,8 @@
             android:fontFamily="@font/psb"
             android:text="Jurassic World: Fallen Kingdom"
             android:textColor="#fff"
-            android:textSize="35sp" />
+            android:textSize="35sp"
+            android:onClick="webapp"/>
 
         <TextView
             android:transitionName="@string/trans3"
