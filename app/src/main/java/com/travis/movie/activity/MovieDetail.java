@@ -15,12 +15,10 @@ import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.jgabrielfreitas.core.BlurImageView;
 import com.travis.movie.extra.OnSwipeTouchListener;
@@ -153,9 +151,6 @@ public class MovieDetail extends AppCompatActivity {
     {
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.activity_movie_detail);
-        dialog.setTitle("WebApp");
-
-        TextView text = (TextView) dialog.findViewById(R.id.title);
         title.setText("About Movie!");
         // Set On ClickListener
         title.setOnClickListener(new View.OnClickListener() {
