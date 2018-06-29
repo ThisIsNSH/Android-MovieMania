@@ -54,20 +54,17 @@ public class AdvancedExampleCountryAdapter extends ArrayAdapter<AdvancedExampleC
             convertView = vi.inflate(R.layout.advanced_example_country_list_item, parent, false);
             holder = new AdvancedExampleCountryAdapter.ViewHolder();
             holder.text = convertView.findViewById(R.id.custom_cell_text);
-            holder.icon = convertView.findViewById(R.id.custom_cell_image);
             convertView.setTag(holder);
         } else {
             holder = (AdvancedExampleCountryAdapter.ViewHolder) convertView.getTag();
         }
         if (null != holder) {
             holder.text.setText(items.get(position).getTitle());
-            holder.icon.setImageResource(items.get(position).getIcon());
         }
         return convertView;
     }
 
     private class ViewHolder {
         TextView text;
-        ImageView icon;
     }
 }

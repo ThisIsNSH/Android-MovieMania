@@ -10,35 +10,24 @@ import java.util.List;
  */
 public class AdvancedExampleCountryPOJO {
     private String title;
-    private int icon;
 
-    public AdvancedExampleCountryPOJO(String title, int icon) {
+    public AdvancedExampleCountryPOJO(String title) {
         this.title = title;
-        this.icon = icon;
-
     }
 
     public static List<AdvancedExampleCountryPOJO> getExampleDataset() {
         return Arrays.asList(
-                new AdvancedExampleCountryPOJO("Russian Federation", R.drawable.sample),
-                new AdvancedExampleCountryPOJO("Canada", R.drawable.sample),
-                new AdvancedExampleCountryPOJO("United States of America", R.drawable.sample),
-                new AdvancedExampleCountryPOJO("China", R.drawable.sample),
-                new AdvancedExampleCountryPOJO("Brazil", R.drawable.sample),
-                new AdvancedExampleCountryPOJO("Australia", R.drawable.sample),
-                new AdvancedExampleCountryPOJO("India", R.drawable.sample),
-                new AdvancedExampleCountryPOJO("Argentina", R.drawable.sample),
-                new AdvancedExampleCountryPOJO("Kazakhstan", R.drawable.sample),
-                new AdvancedExampleCountryPOJO("Algeria", R.drawable.sample)
+                new AdvancedExampleCountryPOJO("2018"),
+                new AdvancedExampleCountryPOJO("2017"),
+                new AdvancedExampleCountryPOJO("2016"),
+                new AdvancedExampleCountryPOJO("2015"),
+                new AdvancedExampleCountryPOJO("2014"),
+                new AdvancedExampleCountryPOJO("2013"),
+                new AdvancedExampleCountryPOJO("2012"),
+                new AdvancedExampleCountryPOJO("2011"),
+                new AdvancedExampleCountryPOJO("2010"),
+                new AdvancedExampleCountryPOJO("2009")
         );
-    }
-
-    public int getIcon() {
-        return icon;
-    }
-
-    public void setIcon(int icon) {
-        this.icon = icon;
     }
 
     public String getTitle() {

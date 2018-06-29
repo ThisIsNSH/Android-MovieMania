@@ -17,20 +17,23 @@
         ds:scale_animations="true"
         ds:scale_animations_factor="1.15"
         ds:scale_animations_pivot_center="true"
-        ds:selected_index="2"
+        ds:selected_index="0"
         ds:selector_background="@drawable/ds_bg_list_selector" />
-
 
     <com.travis.movie.extra.AdvancedExampleCountryPickerBox
         android:id="@+id/ds_country_picker"
-        android:background="@drawable/ds_bg_picker_box"
+        android:layout_above="@id/movie"
+        android:layout_marginBottom="-8dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/movie"
+        android:paddingLeft="4dp"
+        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:visibility="gone" />
+        android:visibility="visible" />
+
 </RelativeLayout>

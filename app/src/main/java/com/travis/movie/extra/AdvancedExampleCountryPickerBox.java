@@ -18,7 +18,6 @@ import com.travis.movie.R;
  */
 public class AdvancedExampleCountryPickerBox extends DSAbstractPickerBox<AdvancedExampleCountryPOJO> {
     private TextView text;
-    private ImageView icon;
     private View cellRoot;
 
     public AdvancedExampleCountryPickerBox(@NonNull Context context) {
@@ -46,14 +45,12 @@ public class AdvancedExampleCountryPickerBox extends DSAbstractPickerBox<Advance
     protected void onFinishInflate() {
         super.onFinishInflate();
         this.text = findViewById(R.id.custom_cell_text);
-        this.icon = findViewById(R.id.custom_cell_image);
         this.cellRoot = findViewById(R.id.custom_cell_root);
     }
 
     @Override
     public void onSelect(AdvancedExampleCountryPOJO selectedItem, int selectedIndex) {
         this.text.setText(selectedItem.getTitle());
-        this.icon.setImageResource(selectedItem.getIcon());
     }
 
     @Override
