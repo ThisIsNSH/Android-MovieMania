@@ -17,4 +17,491 @@
     <string name="customized_picker">Here a fully customized picker with custom background and cell layout:</string>
     <string name="picker_with_custom_bg">Here a picker with default cell but custom background:</string>
     <string name="footer_text">by Ramotion inc.</string>
+
+    <string name="movie2018">{
+"movie":{
+"2018":[
+
+{"id": 260513,"title":"Incredibles 2","v_url":"null"
+
+},
+{"id": 351286,"title":"Jurassic World: Fallen Kingdom","v_url":"null"
+
+},
+{"id":402900 ,"title":"Ocean's 8","v_url":"null"
+
+},
+{"id":493922 ,"title":"Hereditary","v_url":"null"
+
+},
+{"id": 299536,"title":"Avengers: Infinity War","v_url":"null"
+
+},
+{"id": 383498,"title":"Deadpool 2","v_url":"null"
+
+},
+{"id": 348350,"title":"Solo: A Star Wars Story","v_url":"null"
+
+},
+{"id": 455980,"title":"Tag","v_url":"null"
+
+},
+{"id": 454983,"title":"The Kissing Booth","v_url":"null"
+
+},
+{"id": 338970,"title":"Tomb Raider","v_url":"null"
+
+},
+{"id": 284054,"title":"Black Panther","v_url":"null"
+
+},
+{"id": 406761,"title":"Hotel Artemis","v_url":"null"
+
+},
+{"id": 500475,"title":"SuperFly","v_url":"null"
+
+},
+{"id": 500664,"title":"Upgrade","v_url":"null"
+
+},
+{"id": 445571,"title":"Game Night","v_url":"null"
+
+},
+{"id": 447332,"title":"A Quiet Place","v_url":"null"
+
+},
+{"id": 401981,"title":"Red Sparrow","v_url":"null"
+
+},
+{"id": 395990,"title":"Death Wish","v_url":"null"
+
+},
+{"id": 449176,"title":"Love, Simon","v_url":"null"
+
+},
+{"id": 300668,"title":"Annihilation","v_url":"null"
+
+},
+{"id": 429300,"title":"Adrift","v_url":"null"
+
+},
+{"id": 339103,"title":"Gotti","v_url":"null"
+
+},
+{"id": 363088,"title":"Ant-Man and the Wasp","v_url":"null"
+
+},
+{"id": 511785,"title":"Alex Strangelove","v_url":"null"
+
+},
+{"id": 333339,"title":"Ready Player One","v_url":"null"
+
+},
+{"id": 407451,"title":"A Wrinkle in Time","v_url":"null"
+
+},
+{"id": 502682,"title":"Book Club","v_url":"null"
+
+},
+{"id": 440471,"title":"Escape Plan 2: Hades","v_url":"null"
+
+},
+{"id": 449443,"title":"Den of Thieves","v_url":"null"
+
+},
+{"id": 370567,"title":"Sherlock Gnomes","v_url":"null"
+
+},
+{"id": 454619,"title":"Overboard","v_url":"null"
+
+},
+{"id": 384677,"title":"Set It Up","v_url":"null"
+
+},
+{"id": 476299,"title":"Ghostland","v_url":"null"
+
+},
+{"id": 467660,"title":"Unsane","v_url":"null"
+
+},
+{"id": 371608,"title":"The Strangers: Prey at Night","v_url":"null"
+
+},
+{"id": 400535,"title":"Sicario: Day of the Soldado","v_url":"null"
+
+}
+]}}</string>
+    <string name="movie2017">{
+"movie":{
+"2017":[
+{"id":284053,"title":"Thor Ragnarok","v_url":"null"},
+
+{"id":316029,"title":"The Greatest Showman","v_url":"null"},
+
+{"id":354912,"title":"Coco","v_url":"null"},
+
+{"id":335984,"title":"Blade Runner 2049","v_url":"null"},
+
+{"id":346364,"title":"It","v_url":"null"},
+
+{"id":337170,"title":"American Made","v_url":"null"},
+
+{"id":353486,"title":"Jumanji Welcome to the Jungle","v_url":"null"},
+
+{"id":141052,"title":"Justice League","v_url":"null"},
+
+{"id":339846,"title":"Baywatch","v_url":"null"},
+
+{"id":315635,"title":"Spider-Man: Homecoming","v_url":"null"},
+
+{"id":181808,"title":"Star Wars: The Last Jedi","v_url":"null"},
+
+{"id":391713,"title":"Lady Bird","v_url":"null"},
+
+{"id":297762,"title":"Wonder Woman","v_url":"null"},
+
+{"id":399055,"title":"The Shape of Water","v_url":"null"},
+
+{"id":283995,"title":"Guardians of the Galaxy Vol. 2","v_url":"null"},
+
+{"id":371638,"title":"The Disaster Artist","v_url":"null"},
+
+{"id":359940,"title":"Three Billboards Outside Ebbing, Missouri","v_url":"null"},
+
+{"id":381283,"title":"Mother!","v_url":"null"},
+
+{"id":425972,"title":"Cargo","v_url":"null"}
+]}}
+
+
+</string>
+    <string name="movie2016">{
+"movie":{
+"2012":[
+
+{"id": 24428,"title":"The Avengers","v_url":"null"
+
+},
+
+{"id": 70160,"title":"The Hunger Games","v_url":"null"
+
+},
+
+{"id": 22970,"title":"The Cabin in the Woods","v_url":"null"
+
+},
+
+{"id": 49026,"title":"The Dark Knight Rises","v_url":"null"
+
+},
+
+{"id": 49051,"title":"The Hobbit: An Unexpected Journey","v_url":"null"
+
+},
+
+{"id": 82690,"title":"Wreck-It Ralph","v_url":"null"
+
+},
+
+{"id": 44833,"title":"Battleship","v_url":"null"
+
+},
+
+{"id": 114150,"title":"Pitch Perfect","v_url":"null"
+
+},
+
+{"id": 80278,"title":"The Impossible","v_url":"null"
+
+},
+
+{"id": 84892,"title":"The Perks of Being a Wallflower","v_url":"null"
+
+},
+
+{"id": 83542,"title":"Cloud Atlas","v_url":"null"
+
+},
+
+{"id": 1930,"title":"The Amazing Spider-Man","v_url":"null"
+
+},
+
+{"id": 49529,"title":"John Carter","v_url":"null"
+
+},
+
+{"id": 37724,"title":"Skyfall","v_url":"null"
+
+},
+
+{"id": 82525,"title":"Savages","v_url":"null"
+
+},
+
+{"id": 72976,"title":"Lincoln","v_url":"null"
+
+},
+
+{"id": 84199,"title":"The First Time","v_url":"null"
+
+},
+
+{"id": 62213,"title":"Dark Shadows","v_url":"null"
+
+},
+
+{"id": 82507,"title":"Sinister","v_url":"null"
+
+},
+
+{"id": 72545,"title":"Journey 2: The Mysterious Island","v_url":"null"
+
+},
+
+{"id": 76493,"title":"The Dictator","v_url":"null"
+
+},
+
+{"id": 87827,"title":"Life of Pi","v_url":"null"
+
+}
+
+]}}</string>
+    <string name="movie2015">{
+"movie":{
+"2015":[
+{"id":135397,"title":"Jurassic World","v_url":"null"},
+
+{"id":99861,"title":"Avengers: Age of Ultron","v_url":"null"},
+
+{"id":273481,"title":"Sicario","v_url":"null"},
+
+{"id":76341,"title":"Mad Max: Fury Road","v_url":"null"},
+
+{"id":102899,"title":"Ant-Man","v_url":"null"},
+
+{"id":292431,"title":"Love","v_url":"null"},
+
+{"id":286217,"title":"The Martian","v_url":"null"},
+
+{"id":216015,"title":"Fifty Shades of Grey","v_url":"null"},
+
+{"id":131634,"title":"The Hunger Games: Mockingjay - Part 2","v_url":"null"},
+
+{"id":150540,"title":"Inside Out","v_url":"null"},
+
+{"id":273248,"title":"The Hateful Eight","v_url":"null"},
+
+{"id":140607,"title":"Star Wars: The Force Awakens","v_url":"null"},
+
+{"id":206647,"title":"Spectre","v_url":"null"},
+
+{"id":150689,"title":"Cinderella","v_url":"null"},
+
+{"id":177677,"title":"Mission: Impossible - Rogue Nation","v_url":"null"}
+]}}
+
+
+</string>
+    <string name="movie2014">{
+"movie":{
+"2014":[
+{"id": 85350,"title":"Boyhood","v_url":"null"
+
+},
+{"id": 225574,"title":"Non-Stop","v_url":"null"
+
+},
+{"id": 137106,"title":"The Lego Movie","v_url":"null"
+
+},
+{"id": 53182,"title":"300: Rise of an Empire","v_url":"null"
+
+},
+{"id": 82703,"title":"Mr. Peabody & Sherman","v_url":"null"
+
+},
+{"id": 120467,"title":"The Grand Budapest Hotel","v_url":"null"
+
+},
+{"id": 136797,"title":"Need for Speed","v_url":"null"
+
+},
+{"id": 145220,"title":"Muppets Most Wanted","v_url":"null"
+
+},
+{"id": 100402,"title":"Captain America: The Winter Soldier","v_url":"null"
+
+},
+{"id": 172385,"title":"Rio 2","v_url":"null"
+
+},
+{"id": 102382,"title":"The Amazing Spider-Man 2","v_url":"null"
+
+},
+{"id": 195589,"title":"Neighbors","v_url":"null"
+
+},
+{"id": 124905,"title":"Godzilla","v_url":"null"
+
+},
+{"id": 198185,"title":"Million Dollar Arm","v_url":"null"
+
+},
+{"id": 127585,"title":"X-Men: Days of Future Past","v_url":"null"
+
+},
+{"id": 188161,"title":"A Million Ways to Die in the West","v_url":"null"
+
+},
+{"id": 82702,"title":"How to Train Your Dragon 2","v_url":"null"
+
+},
+{"id": 119450,"title":"Dawn of the Planet of the Apes","v_url":"null"
+
+},
+{"id": 184315,"title":"Hercules","v_url":"null"
+
+},
+{"id": 118340,"title":"Guardians of the Galaxy","v_url":"null"
+
+},
+{"id": 138103,"title":"The Expendables 3","v_url":"null"
+
+},
+{"id": 156022,"title":"The Equalizer","v_url":"null"
+
+}
+]}}</string>
+    <string name="movie2013">{
+"movie":{
+"2013":[
+{"id":76338,"title":"Thor: The Dark World","v_url":"null"},
+
+{"id":106646,"title":"The Wolf of Wall Street","v_url":"null"},
+
+{"id":138843,"title":"The Conjuring","v_url":"null"},
+
+{"id":109445,"title":"Frozen","v_url":"null"},
+
+{"id":68726,"title":"Pacific Rim","v_url":"null"},
+
+{"id":107846,"title":"Escape Plan","v_url":"null"},
+
+{"id":146233,"title":"Prisoners","v_url":"null"},
+
+{"id":68721,"title":"Iron Man 3","v_url":"null"},
+
+{"id":49521,"title":"Man of Steel","v_url":"null"},
+
+{"id":152584,"title":"Blue Is the Warmest Color","v_url":"null"},
+
+{"id":158015,"title":"The Purge","v_url":"null"},
+
+{"id":160588,"title":"Blue Jasmine","v_url":"null"},
+
+{"id":101299,"title":"The Hunger Games: Catching Fire","v_url":"null"},
+
+{"id":258216,"title":"Nymphomaniac: Vol. I","v_url":"null"},
+
+{"id":64682,"title":"The Great Gatsby","v_url":"null"}
+]}}
+
+
+</string>
+    <string name="movie2012">{
+"movie":{
+"2012":[
+
+{"id": 24428,"title":"The Avengers","v_url":"null"
+
+},
+
+{"id": 70160,"title":"The Hunger Games","v_url":"null"
+
+},
+
+{"id": 22970,"title":"The Cabin in the Woods","v_url":"null"
+
+},
+
+{"id": 49026,"title":"The Dark Knight Rises","v_url":"null"
+
+},
+
+{"id": 49051,"title":"The Hobbit: An Unexpected Journey","v_url":"null"
+
+},
+
+{"id": 82690,"title":"Wreck-It Ralph","v_url":"null"
+
+},
+
+{"id": 44833,"title":"Battleship","v_url":"null"
+
+},
+
+{"id": 114150,"title":"Pitch Perfect","v_url":"null"
+
+},
+
+{"id": 80278,"title":"The Impossible","v_url":"null"
+
+},
+
+{"id": 84892,"title":"The Perks of Being a Wallflower","v_url":"null"
+
+},
+
+{"id": 83542,"title":"Cloud Atlas","v_url":"null"
+
+},
+
+{"id": 1930,"title":"The Amazing Spider-Man","v_url":"null"
+
+},
+
+{"id": 49529,"title":"John Carter","v_url":"null"
+
+},
+
+{"id": 37724,"title":"Skyfall","v_url":"null"
+
+},
+
+{"id": 82525,"title":"Savages","v_url":"null"
+
+},
+
+{"id": 72976,"title":"Lincoln","v_url":"null"
+
+},
+
+{"id": 84199,"title":"The First Time","v_url":"null"
+
+},
+
+{"id": 62213,"title":"Dark Shadows","v_url":"null"
+
+},
+
+{"id": 82507,"title":"Sinister","v_url":"null"
+
+},
+
+{"id": 72545,"title":"Journey 2: The Mysterious Island","v_url":"null"
+
+},
+
+{"id": 76493,"title":"The Dictator","v_url":"null"
+
+},
+
+{"id": 87827,"title":"Life of Pi","v_url":"null"
+
+}
+
+]}}</string>
+
 </resources>

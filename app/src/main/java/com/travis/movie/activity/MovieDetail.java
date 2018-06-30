@@ -25,6 +25,7 @@ import com.travis.movie.extra.OnSwipeTouchListener;
 
 public class MovieDetail extends AppCompatActivity {
 
+    String id;
     RelativeLayout holder;
     CardView card;
     FrameLayout button;
@@ -51,6 +52,8 @@ public class MovieDetail extends AppCompatActivity {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         setContentView(R.layout.activity_movie_detail);
         initUI();
+        Bundle bundle = getIntent().getExtras();
+        id = bundle.getString("id","00000000");
         holder.setOnTouchListener(new OnSwipeTouchListener(MovieDetail.this) {
 
             public void onSwipeLeft() {

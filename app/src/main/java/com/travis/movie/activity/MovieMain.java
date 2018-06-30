@@ -21,14 +21,16 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.ramotion.directselect.DSListView;
-import com.travis.movie.adapter.AdvancedExampleCountryAdapter;
-import com.travis.movie.model.AdvancedExampleCountryPOJO;
 import com.travis.movie.R;
+import com.travis.movie.adapter.AdvancedExampleCountryAdapter;
 import com.travis.movie.adapter.MovieAdapter;
+import com.travis.movie.extra.AdvancedExampleCountryPickerBox;
 import com.travis.movie.extra.download1;
 import com.travis.movie.extra.video;
+import com.travis.movie.model.AdvancedExampleCountryPOJO;
 import com.travis.movie.model.Movie;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -37,8 +39,13 @@ import java.util.List;
 
 public class MovieMain extends AppCompatActivity {
 
+    AdvancedExampleCountryPickerBox ds_country_picker;
+    Movie movieObject;
+    JSONArray jsonArray;
+    JSONObject jsonObject;
+    DSListView dsListView;
     RecyclerView movie;
-    List<Movie> movieList;
+    List<Movie> movieList,movieList1;
     MovieAdapter movieAdapter;
 
     @Override
@@ -52,6 +59,8 @@ public class MovieMain extends AppCompatActivity {
 
     public void initUI() {
         movie = findViewById(R.id.movie);
+        dsListView = findViewById(R.id.ds_county_list);
+        ds_country_picker = findViewById(R.id.ds_country_picker);
         setupData();
 
     }
@@ -59,33 +68,91 @@ public class MovieMain extends AppCompatActivity {
     public void setupData() {
 
         List<AdvancedExampleCountryPOJO> exampleDataSet = AdvancedExampleCountryPOJO.getExampleDataset();
-
-        // Create adapter with our dataset
         ArrayAdapter<AdvancedExampleCountryPOJO> adapter = new AdvancedExampleCountryAdapter(
                 this, R.layout.advanced_example_country_list_item, exampleDataSet);
-
-        // Set adapter to our DSListView
         DSListView<AdvancedExampleCountryPOJO> pickerView = findViewById(R.id.ds_county_list);
         pickerView.setAdapter(adapter);
-
+        movieList1 = new ArrayList<>();
         movieList = new ArrayList<>();
-        movieAdapter = new MovieAdapter(MovieMain.this, movieList);
+        movieAdapter = new MovieAdapter(MovieMain.this, movieList1);
+        movieAdapter.notifyDataSetChanged();
         LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext());
         llm.setOrientation(LinearLayoutManager.HORIZONTAL);
         movie.setLayoutManager(llm);
         movie.setAdapter(movieAdapter);
+        movieAdapter.notifyDataSetChanged();
         movie.setItemAnimator(new DefaultItemAnimator());
         movie.setFocusable(false);
-        getData();
+
+        movieList1 = getData(dsListView.getSelectedIndex());
+        movieAdapter.notifyDataSetChanged();
     }
 
-    public void getData() {
-        Movie movie = new Movie("Jurassic World: Fallen Kingdom", "https://image.tmdb.org/t/p/original/c9XxwwhPHdaImA2f1WEfEsbhaFB.jpg", "2018");
-        movieList.add(movie);
-        movieList.add(movie);
-        movieList.add(movie);
-        movieList.add(movie);
-        movieAdapter.notifyDataSetChanged();
+    public List<Movie> getData(int a) {
+        try {
+            switch (a) {
+                case 2018:
+                    jsonObject = new JSONObject(getString(R.string.movie2018));
+                    jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2018");
+                    for(int i=0;i<jsonArray.length();i++){
+                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"),jsonArray.getJSONObject(i).getString("v_url"),jsonArray.getJSONObject(i).getString("id"));
+                        movieList.add(movieObject);
+                    }
+                    break;
+                case 2017:
+                    jsonObject = new JSONObject(getString(R.string.movie2017));
+                    jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2017");
+                    for(int i=0;i<jsonArray.length();i++){
+                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"),jsonArray.getJSONObject(i).getString("v_url"),jsonArray.getJSONObject(i).getString("id"));
+                        movieList.add(movieObject);
+                    }
+                    break;
+                case 2016:
+                    jsonObject = new JSONObject(getString(R.string.movie2016));
+                    jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2016");
+                    for(int i=0;i<jsonArray.length();i++){
+                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"),jsonArray.getJSONObject(i).getString("v_url"),jsonArray.getJSONObject(i).getString("id"));
+                        movieList.add(movieObject);
+                    }
+                    break;
+                case 2015:
+                    jsonObject = new JSONObject(getString(R.string.movie2015));
+                    jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2015");
+                    for(int i=0;i<jsonArray.length();i++){
+                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"),jsonArray.getJSONObject(i).getString("v_url"),jsonArray.getJSONObject(i).getString("id"));
+                        movieList.add(movieObject);
+                    }
+                    break;
+                case 2014:
+                    jsonObject = new JSONObject(getString(R.string.movie2014));
+                    jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2014");
+                    for(int i=0;i<jsonArray.length();i++){
+                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"),jsonArray.getJSONObject(i).getString("v_url"),jsonArray.getJSONObject(i).getString("id"));
+                        movieList.add(movieObject);
+                    }
+                    break;
+                case 2013:
+                    jsonObject = new JSONObject(getString(R.string.movie2013));
+                    jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2013");
+                    for(int i=0;i<jsonArray.length();i++){
+                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"),jsonArray.getJSONObject(i).getString("v_url"),jsonArray.getJSONObject(i).getString("id"));
+                        movieList.add(movieObject);
+                    }
+                    break;
+                case 2012:
+                    jsonObject = new JSONObject(getString(R.string.movie2012));
+                    jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2012");
+                    for(int i=0;i<jsonArray.length();i++){
+                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"),jsonArray.getJSONObject(i).getString("v_url"),jsonArray.getJSONObject(i).getString("id"));
+                        movieList.add(movieObject);
+                    }
+                    break;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return movieList;
     }
 
     public static class MainActivity extends Activity {

@@ -43,9 +43,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull final MovieAdapter.MyViewHolder holder, int position) {
-        Movie movie = movieList.get(position);
+        final Movie movie = movieList.get(position);
         holder.title.setText(movie.getTitle());
-        holder.release.setText(movie.getRelease());
         Picasso.get().load(movie.getImg()).into(holder.image);
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +53,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
                 final ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(
                         activityContext,
                         Pair.create((View) holder.image, holder.image.getTransitionName()));
-                mContext.startActivity(new Intent(activityContext, MovieDetail.class)
+                Intent intent = new Intent(activityContext, MovieDetail.class);
+                intent.putExtra("id", movie.getId());
+                mContext.startActivity(intent
                         .putExtra("shared_element_transition_name", view.getTransitionName()), options.toBundle());
             }
         });
