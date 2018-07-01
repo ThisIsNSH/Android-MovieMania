@@ -17,6 +17,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -35,18 +36,24 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MovieDetail extends AppCompatActivity {
 
-   static  String id,poster,duration,release_date,moviename;
+    String id,poster,duration,release_date,moviename,movierevenue,movierating;
     RelativeLayout holder;
-    static String videoid;
+    String videoid;
     CardView card;
     FrameLayout button;
     int check = 0;
     TextView title, runtime, release, revenue;
     ImageView mainImage,movieposter;
     BlurImageView backImage;
+    RatingBar rating;
 RequestQueue movielist;
+int movievote;
+
     public static void watchYoutubeVideo(Context context, String id) {
         Intent appIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
         Intent webIntent = new Intent(Intent.ACTION_VIEW,
@@ -71,10 +78,12 @@ RequestQueue movielist;
         runtime = (TextView) findViewById(R.id.runtime);
         release = (TextView) findViewById(R.id.release);
         movielist = Volley.newRequestQueue(this);
-title = (TextView) findViewById(R.id.title);
-backImage = (BlurImageView) findViewById(R.id.back);
+title = findViewById(R.id.title);
+backImage = findViewById(R.id.back);
+revenue = findViewById(R.id.revenue);
+rating = findViewById(R.id.ratingBar);
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
-                (Request.Method.GET, "http://api.themoviedb.org/3/movie/550?api_key=c94d74f77ae9409c43d2d3d74a1c5d3f&append_to_response=videos", null, new Response.Listener<JSONObject>() {
+                (Request.Method.GET, "http://api.themoviedb.org/3/movie/447332?api_key=c94d74f77ae9409c43d2d3d74a1c5d3f&append_to_response=videos", null, new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject response) {
@@ -82,12 +91,23 @@ backImage = (BlurImageView) findViewById(R.id.back);
                             duration = response.getString("runtime");
                             moviename = response.getString("title");
                             release_date = response.getString("release_date");
+                            int mrevenue = response.getInt("revenue")/1000000;
+                            movievote = (response.getInt("vote_average"))/2;
+                            rating.setNumStars(movievote);
                             poster = response.getString("poster_path");
                             release.setText(release_date);
                             Picasso.get().load("http://image.tmdb.org/t/p/w500/"+poster).into(movieposter);
                             Picasso.get().load("http://image.tmdb.org/t/p/w500/"+poster).into(backImage);
                             runtime.setText(duration + " minutes");
                             title.setText(moviename);
+                            revenue.setText("| $"+  mrevenue + "M");
+                            List<String> allNames = new ArrayList<String>();
+                            JSONObject jsonObj = response.getJSONObject("videos");
+                            JSONArray cast = jsonObj.getJSONArray("results");
+                                JSONObject trailor = cast.getJSONObject(cast.length()-1);
+                                videoid = trailor.getString("key");
+                                allNames.add(videoid);
+//                            videoid = "WR7cc5t7tv8";
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -100,7 +120,6 @@ backImage = (BlurImageView) findViewById(R.id.back);
                         // TODO Auto-generated method stub
                     }
                 });
-
         movielist.add(jsObjRequest);
         holder.setOnTouchListener(new OnSwipeTouchListener(MovieDetail.this) {
 
