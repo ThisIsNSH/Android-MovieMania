@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:foreground="#40000000"
         android:scaleType="centerCrop"
-        android:src="@drawable/sample"
+
         app:radius="10" />
 
     <RelativeLayout
@@ -122,10 +122,8 @@
             android:layout_below="@id/release"
             android:layout_marginLeft="16dp"
             android:fontFamily="@font/ps"
-            android:text="128 Minutes"
             android:textColor="#fff"
             android:textSize="20sp" />
-
         <TextView
             android:id="@+id/revenue"
             android:layout_width="wrap_content"
@@ -137,12 +135,13 @@
             android:textColor="#fff"
             android:textSize="20sp" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/genre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            />
+        <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/genre"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--/>-->
+        <!---->
 
     </RelativeLayout>
 

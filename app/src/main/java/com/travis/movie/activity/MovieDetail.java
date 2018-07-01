@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -19,24 +20,36 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.jgabrielfreitas.core.BlurImageView;
+import com.squareup.picasso.Picasso;
 import com.travis.movie.R;
 import com.travis.movie.extra.OnSwipeTouchListener;
 import com.travis.movie.model.Movie;
 
 import java.util.List;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class MovieDetail extends AppCompatActivity {
 
-    String id;
+   static  String id,poster,duration,release_date,moviename;
     RelativeLayout holder;
+    static String videoid;
     CardView card;
     FrameLayout button;
     int check = 0;
     TextView title, runtime, release, revenue;
-    ImageView mainImage;
+    ImageView mainImage,movieposter;
     BlurImageView backImage;
-
+RequestQueue movielist;
     public static void watchYoutubeVideo(Context context, String id) {
         Intent appIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
         Intent webIntent = new Intent(Intent.ACTION_VIEW,
@@ -55,8 +68,43 @@ public class MovieDetail extends AppCompatActivity {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         setContentView(R.layout.activity_movie_detail);
         initUI();
-        Bundle bundle = getIntent().getExtras();
-        id = bundle.getString("id","00000000");
+//        Bundle bundle = getIntent().getExtras();
+//        id = bundle.getString("id","00000000");
+        movieposter = (ImageView) findViewById(R.id.pic);
+        runtime = (TextView) findViewById(R.id.runtime);
+        release = (TextView) findViewById(R.id.release);
+        movielist = Volley.newRequestQueue(this);
+title = (TextView) findViewById(R.id.title);
+backImage = (BlurImageView) findViewById(R.id.back);
+        JsonObjectRequest jsObjRequest = new JsonObjectRequest
+                (Request.Method.GET, "http://api.themoviedb.org/3/movie/550?api_key=c94d74f77ae9409c43d2d3d74a1c5d3f&append_to_response=videos", null, new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            duration = response.getString("runtime");
+                            moviename = response.getString("title");
+                            release_date = response.getString("release_date");
+                            poster = response.getString("poster_path");
+                            release.setText(release_date);
+                            Picasso.get().load("http://image.tmdb.org/t/p/w500/"+poster).into(movieposter);
+                            Picasso.get().load("http://image.tmdb.org/t/p/w500/"+poster).into(backImage);
+                            runtime.setText(duration + " minutes");
+                            title.setText(moviename);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO Auto-generated method stub
+                    }
+                });
+
+        movielist.add(jsObjRequest);
         holder.setOnTouchListener(new OnSwipeTouchListener(MovieDetail.this) {
 
             public void onSwipeLeft() {
@@ -136,11 +184,10 @@ public class MovieDetail extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                watchYoutubeVideo(MovieDetail.this,"vn9mMeWcgoM");
+                watchYoutubeVideo(MovieDetail.this,videoid);
             }
         });
     }
-
     public void initUI() {
         mainImage = findViewById(R.id.pic);
         backImage = findViewById(R.id.back);
@@ -152,4 +199,5 @@ public class MovieDetail extends AppCompatActivity {
         button = findViewById(R.id.play);
         holder = findViewById(R.id.holder);
     }
+
 }
