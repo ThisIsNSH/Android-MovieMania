@@ -9,6 +9,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/psb"
         android:textSize="19dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
         android:textColor="#000"/>
 
 </RelativeLayout>
