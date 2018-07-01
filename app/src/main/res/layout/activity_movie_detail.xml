@@ -13,7 +13,6 @@
         android:layout_height="match_parent"
         android:foreground="#40000000"
         android:scaleType="centerCrop"
-
         app:radius="10" />
 
     <RelativeLayout
@@ -40,10 +39,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
-                android:background="#000"
                 android:transitionName="@string/trans1"
-                android:scaleType="fitCenter"
-                android:src="@drawable/sample" />
+                android:scaleType="fitCenter" />
 
         </android.support.v7.widget.CardView>
 
@@ -86,7 +83,7 @@
             android:ems="8"
             android:transitionName="@string/trans2"
             android:fontFamily="@font/psb"
-            android:text="Jurassic World: Fallen Kingdom"
+            android:text=""
             android:textColor="#fff"
             android:textSize="35sp" />
 
@@ -99,7 +96,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="-16dp"
             android:fontFamily="@font/psb"
-            android:text="2018"
+            android:text=""
             android:textColor="#fff"
             android:textSize="25sp" />
 
@@ -112,7 +109,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="-8dp"
             android:layout_toRightOf="@id/release"
-            android:rating="3.2"
+            android:rating="0"
             android:theme="@style/AppTheme1" />
 
         <TextView
@@ -131,7 +128,7 @@
             android:layout_below="@id/release"
             android:layout_toRightOf="@id/runtime"
             android:fontFamily="@font/ps"
-            android:text="   |   $711M"
+            android:text=""
             android:textColor="#fff"
             android:textSize="20sp" />
 

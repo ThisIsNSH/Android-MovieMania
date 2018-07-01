@@ -62,6 +62,7 @@ public class MovieMain extends AppCompatActivity {
 
     public void initUI() {
         ds_country_picker = findViewById(R.id.ds_country_picker);
+
         movie2017 = findViewById(R.id.movie2017);
         movie2018 = findViewById(R.id.movie2018);
         movie2016 = findViewById(R.id.movie2016);
@@ -69,6 +70,15 @@ public class MovieMain extends AppCompatActivity {
         movie2014 = findViewById(R.id.movie2014);
         movie2012 = findViewById(R.id.movie2012);
         movie2013 = findViewById(R.id.movie2013);
+
+        movie2012.setVisibility(View.VISIBLE);
+        movie2013.setVisibility(View.VISIBLE);
+        movie2014.setVisibility(View.VISIBLE);
+        movie2015.setVisibility(View.VISIBLE);
+        movie2016.setVisibility(View.VISIBLE);
+        movie2017.setVisibility(View.VISIBLE);
+        movie2018.setVisibility(View.VISIBLE);
+
         ds_county_list = findViewById(R.id.ds_county_list);
         setupData();
 
@@ -90,14 +100,6 @@ public class MovieMain extends AppCompatActivity {
         movieList2014 = new ArrayList<>();
         movieList2013 = new ArrayList<>();
         movieList2012 = new ArrayList<>();
-
-        movieAdapter2018 = new MovieAdapter(MovieMain.this, movieList2018);
-        movieAdapter2017 = new MovieAdapter(MovieMain.this, movieList2017);
-        movieAdapter2016 = new MovieAdapter(MovieMain.this, movieList2016);
-        movieAdapter2015 = new MovieAdapter(MovieMain.this, movieList2015);
-        movieAdapter2014 = new MovieAdapter(MovieMain.this, movieList2014);
-        movieAdapter2013 = new MovieAdapter(MovieMain.this, movieList2013);
-        movieAdapter2012 = new MovieAdapter(MovieMain.this, movieList2012);
 
         linearLayoutManager2018 = new LinearLayoutManager(getApplicationContext());
         linearLayoutManager2017 = new LinearLayoutManager(getApplicationContext());
@@ -123,6 +125,14 @@ public class MovieMain extends AppCompatActivity {
         movie2013.setLayoutManager(linearLayoutManager2013);
         movie2012.setLayoutManager(linearLayoutManager2012);
 
+        movieAdapter2018 = new MovieAdapter(MovieMain.this, movieList2018);
+        movieAdapter2017 = new MovieAdapter(MovieMain.this, movieList2017);
+        movieAdapter2016 = new MovieAdapter(MovieMain.this, movieList2016);
+        movieAdapter2015 = new MovieAdapter(MovieMain.this, movieList2015);
+        movieAdapter2014 = new MovieAdapter(MovieMain.this, movieList2014);
+        movieAdapter2013 = new MovieAdapter(MovieMain.this, movieList2013);
+        movieAdapter2012 = new MovieAdapter(MovieMain.this, movieList2012);
+
         movie2018.setAdapter(movieAdapter2018);
         movie2017.setAdapter(movieAdapter2017);
         movie2016.setAdapter(movieAdapter2016);
@@ -130,6 +140,21 @@ public class MovieMain extends AppCompatActivity {
         movie2014.setAdapter(movieAdapter2014);
         movie2013.setAdapter(movieAdapter2013);
         movie2012.setAdapter(movieAdapter2012);
+
+        getData(2018);
+        movieAdapter2018.notifyDataSetChanged();
+        getData(2017);
+        movieAdapter2017.notifyDataSetChanged();
+        getData(2015);
+        movieAdapter2015.notifyDataSetChanged();
+        getData(2016);
+        movieAdapter2016.notifyDataSetChanged();
+        getData(2014);
+        movieAdapter2014.notifyDataSetChanged();
+        getData(2013);
+        movieAdapter2013.notifyDataSetChanged();
+        getData(2012);
+        movieAdapter2012.notifyDataSetChanged();
 
         ds_country_picker.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
             @Override
@@ -145,8 +170,6 @@ public class MovieMain extends AppCompatActivity {
 
                 switch (a1) {
                     case 2018:
-                        getData(2018);
-                        movieAdapter2018.notifyDataSetChanged();
                         movie2018.setVisibility(View.VISIBLE);
                         movie2017.setVisibility(View.GONE);
                         movie2016.setVisibility(View.GONE);
@@ -154,11 +177,8 @@ public class MovieMain extends AppCompatActivity {
                         movie2014.setVisibility(View.GONE);
                         movie2013.setVisibility(View.GONE);
                         movie2012.setVisibility(View.GONE);
-                        movieAdapter2018.notifyDataSetChanged();
                         break;
                     case 2017:
-                        getData(2017);
-                        movieAdapter2017.notifyDataSetChanged();
                         movie2018.setVisibility(View.GONE);
                         movie2017.setVisibility(View.VISIBLE);
                         movie2016.setVisibility(View.GONE);
@@ -166,11 +186,8 @@ public class MovieMain extends AppCompatActivity {
                         movie2014.setVisibility(View.GONE);
                         movie2013.setVisibility(View.GONE);
                         movie2012.setVisibility(View.GONE);
-                        movieAdapter2017.notifyDataSetChanged();
                         break;
                     case 2016:
-                        getData(2016);
-                        movieAdapter2016.notifyDataSetChanged();
                         movie2018.setVisibility(View.GONE);
                         movie2017.setVisibility(View.GONE);
                         movie2016.setVisibility(View.VISIBLE);
@@ -178,11 +195,8 @@ public class MovieMain extends AppCompatActivity {
                         movie2014.setVisibility(View.GONE);
                         movie2013.setVisibility(View.GONE);
                         movie2012.setVisibility(View.GONE);
-                        movieAdapter2016.notifyDataSetChanged();
                         break;
                     case 2015:
-                        getData(2015);
-                        movieAdapter2015.notifyDataSetChanged();
                         movie2018.setVisibility(View.GONE);
                         movie2017.setVisibility(View.GONE);
                         movie2016.setVisibility(View.GONE);
@@ -190,11 +204,8 @@ public class MovieMain extends AppCompatActivity {
                         movie2014.setVisibility(View.GONE);
                         movie2013.setVisibility(View.GONE);
                         movie2012.setVisibility(View.GONE);
-                        movieAdapter2015.notifyDataSetChanged();
                         break;
                     case 2014:
-                        getData(2014);
-                        movieAdapter2014.notifyDataSetChanged();
                         movie2018.setVisibility(View.GONE);
                         movie2017.setVisibility(View.GONE);
                         movie2016.setVisibility(View.GONE);
@@ -202,11 +213,8 @@ public class MovieMain extends AppCompatActivity {
                         movie2014.setVisibility(View.VISIBLE);
                         movie2013.setVisibility(View.GONE);
                         movie2012.setVisibility(View.GONE);
-                        movieAdapter2014.notifyDataSetChanged();
                         break;
                     case 2013:
-                        getData(2013);
-                        movieAdapter2013.notifyDataSetChanged();
                         movie2018.setVisibility(View.GONE);
                         movie2017.setVisibility(View.GONE);
                         movie2016.setVisibility(View.GONE);
@@ -214,11 +222,8 @@ public class MovieMain extends AppCompatActivity {
                         movie2014.setVisibility(View.GONE);
                         movie2013.setVisibility(View.VISIBLE);
                         movie2012.setVisibility(View.GONE);
-                        movieAdapter2013.notifyDataSetChanged();
                         break;
                     case 2012:
-                        getData(2012);
-                        movieAdapter2012.notifyDataSetChanged();
                         movie2018.setVisibility(View.GONE);
                         movie2017.setVisibility(View.GONE);
                         movie2016.setVisibility(View.GONE);
@@ -226,11 +231,8 @@ public class MovieMain extends AppCompatActivity {
                         movie2014.setVisibility(View.GONE);
                         movie2013.setVisibility(View.GONE);
                         movie2012.setVisibility(View.VISIBLE);
-                        movieAdapter2012.notifyDataSetChanged();
                         break;
                     default:
-                        getData(2018);
-                        movieAdapter2018.notifyDataSetChanged();
                         movie2018.setVisibility(View.VISIBLE);
                         movie2017.setVisibility(View.GONE);
                         movie2016.setVisibility(View.GONE);
@@ -238,11 +240,11 @@ public class MovieMain extends AppCompatActivity {
                         movie2014.setVisibility(View.GONE);
                         movie2013.setVisibility(View.GONE);
                         movie2012.setVisibility(View.GONE);
-                        movieAdapter2018.notifyDataSetChanged();
                         break;
                 }
             }
         });
+
     }
 
 
@@ -461,6 +463,7 @@ public class MovieMain extends AppCompatActivity {
                     jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2015");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"), jsonArray.getJSONObject(i).getString("v_url"), jsonArray.getJSONObject(i).getString("id"));
+                        System.out.println(jsonArray.getJSONObject(i).getString("title"));
                         movieList2016.add(movieObject);
                         movieAdapter2016.notifyDataSetChanged();
                     }
@@ -502,6 +505,7 @@ public class MovieMain extends AppCompatActivity {
                     jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2015");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"), jsonArray.getJSONObject(i).getString("v_url"), jsonArray.getJSONObject(i).getString("id"));
+                        System.out.println(jsonArray.getJSONObject(i).getString("title"));
                         movieList2015.add(movieObject);
                         movieAdapter2015.notifyDataSetChanged();
                     }
@@ -580,6 +584,7 @@ public class MovieMain extends AppCompatActivity {
                     jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2014");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"), jsonArray.getJSONObject(i).getString("v_url"), jsonArray.getJSONObject(i).getString("id"));
+                        System.out.println(jsonArray.getJSONObject(i).getString("title"));
                         movieList2014.add(movieObject);
                         movieAdapter2014.notifyDataSetChanged();
                     }
@@ -621,6 +626,7 @@ public class MovieMain extends AppCompatActivity {
                     jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2013");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"), jsonArray.getJSONObject(i).getString("v_url"), jsonArray.getJSONObject(i).getString("id"));
+                        System.out.println(jsonArray.getJSONObject(i).getString("title"));
                         movieList2013.add(movieObject);
                         movieAdapter2013.notifyDataSetChanged();
                     }
@@ -723,6 +729,7 @@ public class MovieMain extends AppCompatActivity {
                     for (int i = 0; i < jsonArray.length(); i++) {
                         movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"), jsonArray.getJSONObject(i).getString("v_url"), jsonArray.getJSONObject(i).getString("id"));
                         movieList2012.add(movieObject);
+                        System.out.println(jsonArray.getJSONObject(i).getString("title"));
                         movieAdapter2012.notifyDataSetChanged();
                     }
                     break;
