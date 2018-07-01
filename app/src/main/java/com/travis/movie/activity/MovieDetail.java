@@ -30,6 +30,9 @@ import com.jgabrielfreitas.core.BlurImageView;
 import com.squareup.picasso.Picasso;
 import com.travis.movie.R;
 import com.travis.movie.extra.OnSwipeTouchListener;
+import com.travis.movie.model.Movie;
+
+import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONException;
