@@ -18,11 +18,10 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.travis.movie.R;
 
 
-public class login extends AppCompatActivity implements View.OnClickListener , GoogleApiClient.OnConnectionFailedListener {
+public class Login extends AppCompatActivity implements View.OnClickListener {
 
     private LinearLayout Prof_Section;
     private SignInButton SignIn;
-    private TextView Name, Email;
     private GoogleApiClient googleApiClient;
     private static final int Req_Code = 1000;
 
@@ -34,7 +33,7 @@ public class login extends AppCompatActivity implements View.OnClickListener , G
         SignIn.setOnClickListener(this);
         Prof_Section.setVisibility(View.GONE);
         GoogleSignInOptions signInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
-        googleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this, this).addApi(Auth.GOOGLE_SIGN_IN_API, signInOptions).build();
+        googleApiClient = new GoogleApiClient.Builder(this).addApi(Auth.GOOGLE_SIGN_IN_API, signInOptions).build();
     }
 
     private void signIn() {
@@ -60,9 +59,6 @@ public class login extends AppCompatActivity implements View.OnClickListener , G
         if(result.isSuccess())
         {
             GoogleSignInAccount account= result.getSignInAccount();
-            String name = account.getDisplayName();
-            String email= account.getEmail();
-            String img_url = account.getPhotoUrl().toString();
             updateUI(true);
         }
         else
@@ -78,11 +74,6 @@ public class login extends AppCompatActivity implements View.OnClickListener , G
             GoogleSignInResult result =Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             handleResult(result);
         }
-    }
-
-    @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
     }
 
     @Override
