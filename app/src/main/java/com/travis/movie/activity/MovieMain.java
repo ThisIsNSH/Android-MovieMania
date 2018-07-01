@@ -13,7 +13,6 @@ import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -29,11 +28,9 @@ import com.travis.movie.extra.download1;
 import com.travis.movie.extra.video;
 import com.travis.movie.model.AdvancedExampleCountryPOJO;
 import com.travis.movie.model.Movie;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,8 +42,7 @@ public class MovieMain extends AppCompatActivity {
     JSONObject jsonObject;
     DSListView dsListView;
     RecyclerView movie;
-    List<Movie> movieList,movieList1;
-    MovieAdapter movieAdapter;
+    List<Movie> movieList, movieList1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +70,7 @@ public class MovieMain extends AppCompatActivity {
         pickerView.setAdapter(adapter);
         movieList1 = new ArrayList<>();
         movieList = new ArrayList<>();
-        movieAdapter = new MovieAdapter(MovieMain.this, movieList1);
+        MovieAdapter movieAdapter = new MovieAdapter(MovieMain.this, movieList1);
         movieAdapter.notifyDataSetChanged();
         LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext());
         llm.setOrientation(LinearLayoutManager.HORIZONTAL);
@@ -94,56 +90,56 @@ public class MovieMain extends AppCompatActivity {
                 case 2018:
                     jsonObject = new JSONObject(getString(R.string.movie2018));
                     jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2018");
-                    for(int i=0;i<jsonArray.length();i++){
-                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"),jsonArray.getJSONObject(i).getString("v_url"),jsonArray.getJSONObject(i).getString("id"));
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"), jsonArray.getJSONObject(i).getString("v_url"), jsonArray.getJSONObject(i).getString("id"));
                         movieList.add(movieObject);
                     }
                     break;
                 case 2017:
                     jsonObject = new JSONObject(getString(R.string.movie2017));
                     jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2017");
-                    for(int i=0;i<jsonArray.length();i++){
-                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"),jsonArray.getJSONObject(i).getString("v_url"),jsonArray.getJSONObject(i).getString("id"));
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"), jsonArray.getJSONObject(i).getString("v_url"), jsonArray.getJSONObject(i).getString("id"));
                         movieList.add(movieObject);
                     }
                     break;
                 case 2016:
                     jsonObject = new JSONObject(getString(R.string.movie2016));
                     jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2016");
-                    for(int i=0;i<jsonArray.length();i++){
-                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"),jsonArray.getJSONObject(i).getString("v_url"),jsonArray.getJSONObject(i).getString("id"));
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"), jsonArray.getJSONObject(i).getString("v_url"), jsonArray.getJSONObject(i).getString("id"));
                         movieList.add(movieObject);
                     }
                     break;
                 case 2015:
                     jsonObject = new JSONObject(getString(R.string.movie2015));
                     jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2015");
-                    for(int i=0;i<jsonArray.length();i++){
-                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"),jsonArray.getJSONObject(i).getString("v_url"),jsonArray.getJSONObject(i).getString("id"));
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"), jsonArray.getJSONObject(i).getString("v_url"), jsonArray.getJSONObject(i).getString("id"));
                         movieList.add(movieObject);
                     }
                     break;
                 case 2014:
                     jsonObject = new JSONObject(getString(R.string.movie2014));
                     jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2014");
-                    for(int i=0;i<jsonArray.length();i++){
-                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"),jsonArray.getJSONObject(i).getString("v_url"),jsonArray.getJSONObject(i).getString("id"));
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"), jsonArray.getJSONObject(i).getString("v_url"), jsonArray.getJSONObject(i).getString("id"));
                         movieList.add(movieObject);
                     }
                     break;
                 case 2013:
                     jsonObject = new JSONObject(getString(R.string.movie2013));
                     jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2013");
-                    for(int i=0;i<jsonArray.length();i++){
-                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"),jsonArray.getJSONObject(i).getString("v_url"),jsonArray.getJSONObject(i).getString("id"));
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"), jsonArray.getJSONObject(i).getString("v_url"), jsonArray.getJSONObject(i).getString("id"));
                         movieList.add(movieObject);
                     }
                     break;
                 case 2012:
                     jsonObject = new JSONObject(getString(R.string.movie2012));
                     jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2012");
-                    for(int i=0;i<jsonArray.length();i++){
-                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"),jsonArray.getJSONObject(i).getString("v_url"),jsonArray.getJSONObject(i).getString("id"));
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        movieObject = new Movie(jsonArray.getJSONObject(i).getString("title"), jsonArray.getJSONObject(i).getString("v_url"), jsonArray.getJSONObject(i).getString("id"));
                         movieList.add(movieObject);
                     }
                     break;
@@ -154,6 +150,7 @@ public class MovieMain extends AppCompatActivity {
 
         return movieList;
     }
+}
 
     public static class MainActivity extends Activity {
         String url, name, duration;
@@ -213,4 +210,3 @@ public class MovieMain extends AppCompatActivity {
         }
 
     }
-}
