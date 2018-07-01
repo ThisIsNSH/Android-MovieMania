@@ -31,6 +31,7 @@ import com.squareup.picasso.Picasso;
 import com.travis.movie.R;
 import com.travis.movie.extra.OnSwipeTouchListener;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -39,7 +40,7 @@ import java.util.List;
 
 public class MovieDetail extends AppCompatActivity {
 
-    String id,poster,duration,release_date,moviename,movierevenue,movierating;
+    String id, poster, duration, release_date, moviename, movierevenue, movierating;
     RelativeLayout holder;
     String videoid;
     CardView card;
@@ -49,8 +50,8 @@ public class MovieDetail extends AppCompatActivity {
     ImageView mainImage, movieposter;
     BlurImageView backImage;
     RatingBar rating;
-RequestQueue movielist;
-int movievote;
+    RequestQueue movielist;
+    float movievote;
 
     public static void watchYoutubeVideo(Context context, String id) {
         Intent appIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
@@ -78,12 +79,12 @@ int movievote;
         runtime = (TextView) findViewById(R.id.runtime);
         release = (TextView) findViewById(R.id.release);
         movielist = Volley.newRequestQueue(this);
-title = findViewById(R.id.title);
-backImage = findViewById(R.id.back);
-revenue = findViewById(R.id.revenue);
-rating = findViewById(R.id.ratingBar);
+        title = findViewById(R.id.title);
+        backImage = findViewById(R.id.back);
+        revenue = findViewById(R.id.revenue);
+        rating = findViewById(R.id.ratingBar);
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
-                (Request.Method.GET, "http://api.themoviedb.org/3/movie/447332?api_key=c94d74f77ae9409c43d2d3d74a1c5d3f&append_to_response=videos", null, new Response.Listener<JSONObject>() {
+                (Request.Method.GET, "http://api.themoviedb.org/3/movie/" + id + "?api_key=c94d74f77ae9409c43d2d3d74a1c5d3f&append_to_response=videos", null, new Response.Listener<JSONObject>() {
 
 
                     @Override
@@ -92,22 +93,66 @@ rating = findViewById(R.id.ratingBar);
                             duration = response.getString("runtime");
                             moviename = response.getString("title");
                             release_date = response.getString("release_date");
-                            int mrevenue = response.getInt("revenue")/1000000;
-                            movievote = (response.getInt("vote_average"))/2;
-                            rating.setNumStars(movievote);
+                            int mrevenue = response.getInt("revenue") / 1000000;
+                            movievote = (response.getInt("vote_average")) / 2;
+                            rating.setRating(movievote);
+//                            rating.setNumStars(movievote);
                             poster = response.getString("poster_path");
-                            release.setText(release_date);
+                            String month;
+                            String[] split = release_date.split("-");
+                            switch (split[1]) {
+                                case "01":
+                                    month = "Jan";
+                                    break;
+                                case "02":
+                                    month = "Feb";
+                                    break;
+                                case "03":
+                                    month = "Mar";
+                                    break;
+                                case "04":
+                                    month = "Apr";
+                                    break;
+                                case "05":
+                                    month = "May";
+                                    break;
+                                case "06":
+                                    month = "Jun";
+                                    break;
+                                case "07":
+                                    month = "Jul";
+                                    break;
+                                case "08":
+                                    month = "Aug";
+                                    break;
+                                case "09":
+                                    month = "Sep";
+                                    break;
+                                case "10":
+                                    month = "Oct";
+                                    break;
+                                case "11":
+                                    month = "Nov";
+                                    break;
+                                case "12":
+                                    month = "Dec";
+                                    break;
+                                default:
+                                    month = "";
+                                    break;
+                            }
+                            release.setText(split[2] + " " + month);
                             Picasso.get().load("http://image.tmdb.org/t/p/original/" + poster).into(movieposter);
                             Picasso.get().load("http://image.tmdb.org/t/p/original/" + poster).into(backImage);
-                            runtime.setText(duration + " minutes");
+                            runtime.setText(duration + " Mins");
                             title.setText(moviename);
-                            revenue.setText("| $"+  mrevenue + "M");
+                            revenue.setText(" | $" + mrevenue + " M");
                             List<String> allNames = new ArrayList<String>();
                             JSONObject jsonObj = response.getJSONObject("videos");
                             JSONArray cast = jsonObj.getJSONArray("results");
-                                JSONObject trailor = cast.getJSONObject(cast.length()-1);
-                                videoid = trailor.getString("key");
-                                allNames.add(videoid);
+                            JSONObject trailor = cast.getJSONObject(cast.length() - 1);
+                            videoid = trailor.getString("key");
+                            allNames.add(videoid);
 //                            videoid = "WR7cc5t7tv8";
                         } catch (JSONException e) {
                             e.printStackTrace();

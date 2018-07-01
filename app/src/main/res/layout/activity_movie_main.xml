@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ds="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:orientation="vertical"
     tools:context="com.travis.movie.activity.MovieMain">
 
     <com.ramotion.directselect.DSListView
@@ -15,12 +14,12 @@
         android:background="@color/ds_list_bg"
         android:elevation="1dp"
         android:visibility="invisible"
-        ds:picker_box_view="@id/ds_country_picker"
-        ds:scale_animations="true"
-        ds:scale_animations_factor="1.15"
-        ds:scale_animations_pivot_center="true"
-        ds:selected_index="0"
-        ds:selector_background="@drawable/ds_bg_list_selector" />
+        app:picker_box_view="@id/ds_country_picker"
+        app:scale_animations="true"
+        app:scale_animations_factor="1.15"
+        app:scale_animations_pivot_center="true"
+        app:selected_index="0"
+        app:selector_background="@drawable/ds_bg_list_selector" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,75 +30,91 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#f3f3f3" />
+            android:background="#fff" />
 
-        <com.travis.movie.extra.AdvancedExampleCountryPickerBox
-            android:id="@+id/ds_country_picker"
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="-8dp" />
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/movie2018"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:paddingLeft="4dp"
-            android:visibility="gone" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/movie2017"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:paddingLeft="4dp"
-            android:visibility="gone" />
+                <com.travis.movie.extra.AdvancedExampleCountryPickerBox
+                    android:id="@+id/ds_country_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="-8dp"
+                    android:layout_marginLeft="19dp"
+                    android:layout_marginTop="10dp" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/movie2016"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:paddingLeft="4dp"
-            android:visibility="gone" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/movie2018"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/movie2015"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:paddingLeft="4dp"
-            android:visibility="gone" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/movie2017"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/movie2014"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:paddingLeft="4dp"
-            android:visibility="gone" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/movie2016"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/movie2013"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:paddingLeft="4dp"
-            android:visibility="gone" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/movie2015"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/movie2012"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:paddingLeft="4dp"
-            android:visibility="gone" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/movie2014"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/movie2013"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/movie2012"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
     </LinearLayout>
 </RelativeLayout>
