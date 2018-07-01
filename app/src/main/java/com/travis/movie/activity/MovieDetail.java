@@ -9,7 +9,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -32,7 +31,6 @@ import com.squareup.picasso.Picasso;
 import com.travis.movie.R;
 import com.travis.movie.extra.OnSwipeTouchListener;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -48,7 +46,7 @@ public class MovieDetail extends AppCompatActivity {
     FrameLayout button;
     int check = 0;
     TextView title, runtime, release, revenue;
-    ImageView mainImage,movieposter;
+    ImageView mainImage, movieposter;
     BlurImageView backImage;
     RatingBar rating;
 RequestQueue movielist;
@@ -72,8 +70,10 @@ int movievote;
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         setContentView(R.layout.activity_movie_detail);
         initUI();
-//        Bundle bundle = getIntent().getExtras();
-//        id = bundle.getString("id","00000000");
+
+        Bundle bundle = getIntent().getExtras();
+        id = bundle.getString("id", "00000000");
+
         movieposter = (ImageView) findViewById(R.id.pic);
         runtime = (TextView) findViewById(R.id.runtime);
         release = (TextView) findViewById(R.id.release);
@@ -84,6 +84,7 @@ revenue = findViewById(R.id.revenue);
 rating = findViewById(R.id.ratingBar);
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
                 (Request.Method.GET, "http://api.themoviedb.org/3/movie/447332?api_key=c94d74f77ae9409c43d2d3d74a1c5d3f&append_to_response=videos", null, new Response.Listener<JSONObject>() {
+
 
                     @Override
                     public void onResponse(JSONObject response) {
@@ -96,8 +97,8 @@ rating = findViewById(R.id.ratingBar);
                             rating.setNumStars(movievote);
                             poster = response.getString("poster_path");
                             release.setText(release_date);
-                            Picasso.get().load("http://image.tmdb.org/t/p/w500/"+poster).into(movieposter);
-                            Picasso.get().load("http://image.tmdb.org/t/p/w500/"+poster).into(backImage);
+                            Picasso.get().load("http://image.tmdb.org/t/p/original/" + poster).into(movieposter);
+                            Picasso.get().load("http://image.tmdb.org/t/p/original/" + poster).into(backImage);
                             runtime.setText(duration + " minutes");
                             title.setText(moviename);
                             revenue.setText("| $"+  mrevenue + "M");
@@ -200,10 +201,11 @@ rating = findViewById(R.id.ratingBar);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                watchYoutubeVideo(MovieDetail.this,videoid);
+                watchYoutubeVideo(MovieDetail.this, videoid);
             }
         });
     }
+
     public void initUI() {
         mainImage = findViewById(R.id.pic);
         backImage = findViewById(R.id.back);
