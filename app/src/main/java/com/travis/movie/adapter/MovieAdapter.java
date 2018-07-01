@@ -45,7 +45,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
     public void onBindViewHolder(@NonNull final MovieAdapter.MyViewHolder holder, int position) {
         final Movie movie = movieList.get(position);
         holder.title.setText(movie.getTitle());
-        Picasso.get().load(movie.getImg()).placeholder(R.drawable.ds_bg_list_selector).into(holder.image);
+        Picasso.get().load(movie.getImg()).placeholder(R.drawable.sample).into(holder.image);
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

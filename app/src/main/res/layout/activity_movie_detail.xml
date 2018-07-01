@@ -11,7 +11,7 @@
         android:id="@+id/back"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:foreground="#40000000"
+        android:foreground="@drawable/black_gradient"
         android:scaleType="centerCrop"
         app:radius="10" />
 
@@ -39,8 +39,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
-                android:transitionName="@string/trans1"
-                android:scaleType="fitCenter" />
+
+                android:scaleType="fitCenter"
+                android:transitionName="@string/trans1" />
 
         </android.support.v7.widget.CardView>
 
@@ -81,14 +82,13 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:ems="8"
-            android:transitionName="@string/trans2"
             android:fontFamily="@font/psb"
             android:text=""
             android:textColor="#fff"
-            android:textSize="35sp" />
+            android:textSize="35sp"
+            android:transitionName="@string/trans2" />
 
         <TextView
-            android:transitionName="@string/trans3"
             android:id="@+id/release"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -98,7 +98,8 @@
             android:fontFamily="@font/psb"
             android:text=""
             android:textColor="#fff"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:transitionName="@string/trans3" />
 
         <RatingBar
             android:id="@+id/ratingBar"
@@ -121,6 +122,7 @@
             android:fontFamily="@font/ps"
             android:textColor="#fff"
             android:textSize="20sp" />
+
         <TextView
             android:id="@+id/revenue"
             android:layout_width="wrap_content"
@@ -133,11 +135,11 @@
             android:textSize="20sp" />
 
         <!--<android.support.v7.widget.RecyclerView-->
-            <!--android:id="@+id/genre"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginLeft="16dp"-->
-            <!--/>-->
+        <!--android:id="@+id/genre"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="16dp"-->
+        <!--/>-->
         <!---->
 
     </RelativeLayout>
