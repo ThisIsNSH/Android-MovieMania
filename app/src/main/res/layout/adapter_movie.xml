@@ -18,15 +18,14 @@
 
         <ImageView
             android:id="@+id/pic"
-            android:transitionName="@string/trans1"
             android:layout_width="match_parent"
             android:layout_height="170dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/sample" />
+            android:src="@drawable/sample"
+            android:transitionName="@string/trans1" />
 
         <TextView
             android:id="@+id/title"
-            android:transitionName="@string/trans2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/pic"
@@ -36,10 +35,10 @@
             android:minLines="2"
             android:text="Jurassic World: Fallen Kingdom"
             android:textColor="#000"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:transitionName="@string/trans2" />
 
         <TextView
-            android:transitionName="@string/trans3"
             android:id="@+id/release"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,7 +48,9 @@
             android:layout_marginTop="-8dp"
             android:fontFamily="@font/ps"
             android:text="2018"
-            android:textSize="17sp" />
+            android:textSize="17sp"
+            android:transitionName="@string/trans3"
+            android:visibility="gone" />
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>
