@@ -7,13 +7,13 @@
     android:fitsSystemWindows="true"
     tools:context="com.travis.movie.activity.MovieDetail">
 
-    <com.jgabrielfreitas.core.BlurImageView
+    <ImageView
         android:id="@+id/back"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:foreground="@drawable/black_gradient"
         android:scaleType="centerCrop"
-        app:radius="10" />
+         />
 
     <RelativeLayout
         android:id="@+id/holder"

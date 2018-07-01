@@ -4,6 +4,10 @@ import android.animation.ObjectAnimator;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.BlurMaskFilter;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -26,8 +30,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.jgabrielfreitas.core.BlurImageView;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 import com.travis.movie.R;
 import com.travis.movie.extra.OnSwipeTouchListener;
 
@@ -37,6 +43,10 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import jp.wasabeef.glide.transformations.BlurTransformation;
+
+import static com.travis.movie.activity.GlideOptions.bitmapTransform;
 
 public class MovieDetail extends AppCompatActivity {
 
@@ -48,7 +58,7 @@ public class MovieDetail extends AppCompatActivity {
     int check = 0;
     TextView title, runtime, release, revenue;
     ImageView mainImage, movieposter;
-    BlurImageView backImage;
+    ImageView backImage,background;
     RatingBar rating;
     RequestQueue movielist;
     float movievote;
@@ -72,19 +82,19 @@ public class MovieDetail extends AppCompatActivity {
         setContentView(R.layout.activity_movie_detail);
         initUI();
 
-        Bundle bundle = getIntent().getExtras();
-        id = bundle.getString("id", "00000000");
+//        Bundle bundle = getIntent().getExtras();
+//        id = bundle.getString("id", "00000000");
 
-        movieposter = (ImageView) findViewById(R.id.pic);
-        runtime = (TextView) findViewById(R.id.runtime);
-        release = (TextView) findViewById(R.id.release);
+        movieposter =  findViewById(R.id.pic);
+        runtime = findViewById(R.id.runtime);
+        release =  findViewById(R.id.release);
         movielist = Volley.newRequestQueue(this);
         title = findViewById(R.id.title);
         backImage = findViewById(R.id.back);
         revenue = findViewById(R.id.revenue);
         rating = findViewById(R.id.ratingBar);
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
-                (Request.Method.GET, "http://api.themoviedb.org/3/movie/" + id + "?api_key=c94d74f77ae9409c43d2d3d74a1c5d3f&append_to_response=videos", null, new Response.Listener<JSONObject>() {
+                (Request.Method.GET, "http://api.themoviedb.org/3/movie/" + "550" + "?api_key=c94d74f77ae9409c43d2d3d74a1c5d3f&append_to_response=videos", null, new Response.Listener<JSONObject>() {
 
 
                     @Override
@@ -143,7 +153,10 @@ public class MovieDetail extends AppCompatActivity {
                             }
                             release.setText(split[2] + " " + month);
                             Picasso.get().load("http://image.tmdb.org/t/p/original/" + poster).into(movieposter);
-                            Picasso.get().load("http://image.tmdb.org/t/p/original/" + poster).into(backImage);
+                            GlideApp.with(MovieDetail.this)
+                                    .load("http://image.tmdb.org/t/p/original/" + poster)
+                                    .apply(bitmapTransform(new BlurTransformation(4, 3)))
+                                    .into(backImage);
                             runtime.setText(duration + " Mins");
                             title.setText(moviename);
                             revenue.setText(" | $" + mrevenue + " M");
@@ -153,7 +166,7 @@ public class MovieDetail extends AppCompatActivity {
                             JSONObject trailor = cast.getJSONObject(cast.length() - 1);
                             videoid = trailor.getString("key");
                             allNames.add(videoid);
-//                            videoid = "WR7cc5t7tv8";
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -166,7 +179,10 @@ public class MovieDetail extends AppCompatActivity {
                         // TODO Auto-generated method stub
                     }
                 });
+
+
         movielist.add(jsObjRequest);
+
         holder.setOnTouchListener(new OnSwipeTouchListener(MovieDetail.this) {
 
             public void onSwipeLeft() {
