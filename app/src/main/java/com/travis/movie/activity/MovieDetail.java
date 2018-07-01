@@ -22,6 +22,9 @@ import android.widget.TextView;
 import com.jgabrielfreitas.core.BlurImageView;
 import com.travis.movie.R;
 import com.travis.movie.extra.OnSwipeTouchListener;
+import com.travis.movie.model.Movie;
+
+import java.util.List;
 
 public class MovieDetail extends AppCompatActivity {
 

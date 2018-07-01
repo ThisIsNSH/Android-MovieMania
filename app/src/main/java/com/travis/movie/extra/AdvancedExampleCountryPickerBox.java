@@ -17,7 +17,7 @@ import com.travis.movie.R;
  * Created by ThisIsNSH on 6/28/2018.
  */
 public class AdvancedExampleCountryPickerBox extends DSAbstractPickerBox<AdvancedExampleCountryPOJO> {
-    private TextView text;
+    public static TextView text;
     private View cellRoot;
 
     public AdvancedExampleCountryPickerBox(@NonNull Context context) {
