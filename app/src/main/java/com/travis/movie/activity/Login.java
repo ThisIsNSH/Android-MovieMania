@@ -28,8 +28,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_main);
-        SignIn = (SignInButton) findViewById(R.id.bn_login);
+//        setContentView(R.layout.activity_movie_main);
+//        SignIn = (SignInButton) findViewById(R.id.bn_login);
         SignIn.setOnClickListener(this);
         Prof_Section.setVisibility(View.GONE);
         GoogleSignInOptions signInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
@@ -81,9 +81,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         switch(v.getId())
         {
-            case R.id.bn_login:
-                signIn();
-                break;
+//            case R.id.bn_login:
+//                signIn();
+//                break;
 
         }
 
