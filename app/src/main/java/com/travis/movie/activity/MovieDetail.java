@@ -1,6 +1,7 @@
 package com.travis.movie.activity;
 
 import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -21,6 +22,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -52,15 +54,15 @@ import static com.travis.movie.activity.GlideOptions.bitmapTransform;
 
 public class MovieDetail extends AppCompatActivity {
 
-    String id, poster, duration, release_date, moviename, movierevenue, movierating;
+    String id, poster, duration, release_date, moviename, movierevenue, movierating,overview,productionCompanies;
     RelativeLayout holder;
     String videoid;
     CardView card;
     FrameLayout button;
     int check = 0;
-    TextView title, runtime, release, revenue;
+    TextView title, runtime, release, revenue,movie_overview,movie_prodution;
     ImageView mainImage, movieposter;
-    ImageView backImage,background;
+    ImageView backImage, background;
     RatingBar rating;
     RequestQueue movielist;
     float movievote;
@@ -87,9 +89,9 @@ public class MovieDetail extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         id = bundle.getString("id", "00000000");
 
-        movieposter =  findViewById(R.id.pic);
+        movieposter = findViewById(R.id.pic);
         runtime = findViewById(R.id.runtime);
-        release =  findViewById(R.id.release);
+        release = findViewById(R.id.release);
         movielist = Volley.newRequestQueue(this);
         title = findViewById(R.id.title);
         backImage = findViewById(R.id.back);
@@ -181,6 +183,15 @@ public class MovieDetail extends AppCompatActivity {
                         // TODO Auto-generated method stub
                     }
                 });
+
+        // Set On ClickListener
+        title.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(MovieDetail.this, AboutMovie.class);
+                i.putExtra("id", id);
+                startActivity(i);
+            }
+        });
 
 
         movielist.add(jsObjRequest);
@@ -280,17 +291,5 @@ public class MovieDetail extends AppCompatActivity {
         button = findViewById(R.id.play);
         holder = findViewById(R.id.holder);
     }
-    public void webapp(View V)
-    {
-        final Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.activity_movie_detail);
-        title.setText("About Movie!");
-        // Set On ClickListener
-        title.setOnClickListener(new View.OnClickListener() {
 
-            public void onClick(View v) {
-              dialog.show();
-            }
-        });
-    }
 }
