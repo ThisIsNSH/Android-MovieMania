@@ -5,20 +5,20 @@ package com.travis.movie.model;
  */
 
 public class Movie {
-    String title,img,release;
+    String title,img,id;
 
-    public Movie(String title,String img,String release){
+    public Movie(String title,String img,String id){
         this.title = title;
         this.img = img;
-        this.release = release;
+        this.id = id;
     }
 
-    public String getRelease() {
-        return release;
+    public String getId() {
+        return id;
     }
 
-    public void setRelease(String release) {
-        this.release = release;
+    public void setId(String id) {
+        this.id= id;
     }
 
     public String getImg() {

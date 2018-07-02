@@ -5,6 +5,10 @@ import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.BlurMaskFilter;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -17,22 +21,48 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.jgabrielfreitas.core.BlurImageView;
-import com.travis.movie.extra.OnSwipeTouchListener;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 import com.travis.movie.R;
+import com.travis.movie.extra.OnSwipeTouchListener;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import jp.wasabeef.glide.transformations.BlurTransformation;
+
+import static com.travis.movie.activity.GlideOptions.bitmapTransform;
 
 public class MovieDetail extends AppCompatActivity {
 
+    String id, poster, duration, release_date, moviename, movierevenue, movierating;
     RelativeLayout holder;
+    String videoid;
     CardView card;
     FrameLayout button;
     int check = 0;
     TextView title, runtime, release, revenue;
-    ImageView mainImage;
-    BlurImageView backImage;
+    ImageView mainImage, movieposter;
+    ImageView backImage,background;
+    RatingBar rating;
+    RequestQueue movielist;
+    float movievote;
 
     public static void watchYoutubeVideo(Context context, String id) {
         Intent appIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + id));
@@ -52,6 +82,108 @@ public class MovieDetail extends AppCompatActivity {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         setContentView(R.layout.activity_movie_detail);
         initUI();
+
+//        Bundle bundle = getIntent().getExtras();
+//        id = bundle.getString("id", "00000000");
+
+        movieposter =  findViewById(R.id.pic);
+        runtime = findViewById(R.id.runtime);
+        release =  findViewById(R.id.release);
+        movielist = Volley.newRequestQueue(this);
+        title = findViewById(R.id.title);
+        backImage = findViewById(R.id.back);
+        revenue = findViewById(R.id.revenue);
+        rating = findViewById(R.id.ratingBar);
+        JsonObjectRequest jsObjRequest = new JsonObjectRequest
+                (Request.Method.GET, "http://api.themoviedb.org/3/movie/" + "550" + "?api_key=c94d74f77ae9409c43d2d3d74a1c5d3f&append_to_response=videos", null, new Response.Listener<JSONObject>() {
+
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            duration = response.getString("runtime");
+                            moviename = response.getString("title");
+                            release_date = response.getString("release_date");
+                            int mrevenue = response.getInt("revenue") / 1000000;
+                            movievote = (response.getInt("vote_average")) / 2;
+                            rating.setRating(movievote);
+//                            rating.setNumStars(movievote);
+                            poster = response.getString("poster_path");
+                            String month;
+                            String[] split = release_date.split("-");
+                            switch (split[1]) {
+                                case "01":
+                                    month = "Jan";
+                                    break;
+                                case "02":
+                                    month = "Feb";
+                                    break;
+                                case "03":
+                                    month = "Mar";
+                                    break;
+                                case "04":
+                                    month = "Apr";
+                                    break;
+                                case "05":
+                                    month = "May";
+                                    break;
+                                case "06":
+                                    month = "Jun";
+                                    break;
+                                case "07":
+                                    month = "Jul";
+                                    break;
+                                case "08":
+                                    month = "Aug";
+                                    break;
+                                case "09":
+                                    month = "Sep";
+                                    break;
+                                case "10":
+                                    month = "Oct";
+                                    break;
+                                case "11":
+                                    month = "Nov";
+                                    break;
+                                case "12":
+                                    month = "Dec";
+                                    break;
+                                default:
+                                    month = "";
+                                    break;
+                            }
+                            release.setText(split[2] + " " + month);
+                            Picasso.get().load("http://image.tmdb.org/t/p/original/" + poster).into(movieposter);
+                            GlideApp.with(MovieDetail.this)
+                                    .load("http://image.tmdb.org/t/p/original/" + poster)
+                                    .apply(bitmapTransform(new BlurTransformation(4, 3)))
+                                    .into(backImage);
+                            runtime.setText(duration + " Mins");
+                            title.setText(moviename);
+                            revenue.setText(" | $" + mrevenue + " M");
+                            List<String> allNames = new ArrayList<String>();
+                            JSONObject jsonObj = response.getJSONObject("videos");
+                            JSONArray cast = jsonObj.getJSONArray("results");
+                            JSONObject trailor = cast.getJSONObject(cast.length() - 1);
+                            videoid = trailor.getString("key");
+                            allNames.add(videoid);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO Auto-generated method stub
+                    }
+                });
+
+
+        movielist.add(jsObjRequest);
+
         holder.setOnTouchListener(new OnSwipeTouchListener(MovieDetail.this) {
 
             public void onSwipeLeft() {
@@ -131,7 +263,7 @@ public class MovieDetail extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                watchYoutubeVideo(MovieDetail.this,"vn9mMeWcgoM");
+                watchYoutubeVideo(MovieDetail.this, videoid);
             }
         });
     }
