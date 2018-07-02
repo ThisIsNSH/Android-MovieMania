@@ -23,5 +23,4 @@
         <activity android:name=".extra.video" />
         <activity android:name=".activity.MovieDetail" android:exported="true"></activity>
     </application>
-
 </manifest>

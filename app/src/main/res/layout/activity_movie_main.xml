@@ -1,74 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ds="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     android:fitsSystemWindows="true"
-    android:id="@+id/prof_section"
     tools:context="com.travis.movie.activity.MovieMain">
 
     <com.ramotion.directselect.DSListView
         android:id="@+id/ds_county_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
         android:background="@color/ds_list_bg"
+        android:elevation="1dp"
         android:visibility="invisible"
-        ds:picker_box_view="@id/ds_country_picker"
-        ds:scale_animations="true"
-        ds:scale_animations_factor="1.15"
-        ds:scale_animations_pivot_center="true"
-        ds:selected_index="0"
-        ds:selector_background="@drawable/ds_bg_list_selector">
+        app:picker_box_view="@id/ds_country_picker"
+        app:scale_animations="true"
+        app:scale_animations_factor="1.15"
+        app:scale_animations_pivot_center="true"
+        app:selected_index="0"
+        app:selector_background="@drawable/ds_bg_list_selector" />
 
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/signInButton"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/signInButton"
-            android:layout_marginTop="20dp">
-
-        </com.google.android.gms.common.SignInButton>
-    </com.ramotion.directselect.DSListView>
-
-    <com.travis.movie.extra.AdvancedExampleCountryPickerBox
-        android:id="@+id/ds_country_picker"
-        android:layout_above="@id/movie"
-        android:layout_marginBottom="-8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/movie"
-        android:paddingLeft="4dp"
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:visibility="visible" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#fff" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/name"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/email"/>
+            android:background="#fff"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <com.travis.movie.extra.AdvancedExampleCountryPickerBox
+                    android:id="@+id/ds_country_picker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="-4dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="-4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/ds_country_picker"
+                    android:fontFamily="@font/psb"
+                    android:text=" Movies"
+                    android:textColor="#000"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:id="@+id/more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20sp"
+                    android:fontFamily="@font/ps"
+                    android:text="More"
+                    android:textColor="#555"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/movie2018"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:visibility="gone" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/movie2017"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:visibility="gone" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/movie2016"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:visibility="gone" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/movie2015"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:visibility="gone" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/movie2014"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:visibility="gone" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/movie2013"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:visibility="gone" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/movie2012"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:visibility="gone" />
+        </LinearLayout>
     </LinearLayout>
-<com.google.android.gms.common.SignInButton
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/prof_section"
-    android:id="@+id/bn_login">
-
-</com.google.android.gms.common.SignInButton>
-
 </RelativeLayout>
