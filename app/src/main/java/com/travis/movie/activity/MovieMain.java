@@ -163,10 +163,10 @@ public class MovieMain extends AppCompatActivity {
                 int a1;
 
                 System.out.println(a.text.getText());
-                if (a.text.getText().toString().substring(0,3).equals(""))
+                if (a.text.getText().toString().equals(""))
                     a1 = 0;
                 else
-                    a1 = Integer.parseInt(a.text.getText().toString().substring(0,3));
+                    a1 = Integer.parseInt(a.text.getText().toString());
 
                 switch (a1) {
                     case 2018:
@@ -322,25 +322,7 @@ public class MovieMain extends AppCompatActivity {
                             "\n" +
                             "{\"id\":102899,\"title\":\"Ant-Man\",\"v_url\":\"null\"},\n" +
                             "\n" +
-                            "{\"id\":292431,\"title\":\"Love\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":286217,\"title\":\"The Martian\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":216015,\"title\":\"Fifty Shades of Grey\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":131634,\"title\":\"The Hunger Games: Mockingjay - Part 2\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":150540,\"title\":\"Inside Out\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":273248,\"title\":\"The Hateful Eight\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":140607,\"title\":\"Star Wars: The Force Awakens\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":206647,\"title\":\"Spectre\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":150689,\"title\":\"Cinderella\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":177677,\"title\":\"Mission: Impossible - Rogue Nation\",\"v_url\":\"null\"}\n" +
+                            "{\"id\":292431,\"title\":\"Love\",\"v_url\":\"null\"}\n" +
                             "]}}\n");
 
                     jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2015");
@@ -365,25 +347,7 @@ public class MovieMain extends AppCompatActivity {
                             "\n" +
                             "{\"id\":102899,\"title\":\"Ant-Man\",\"v_url\":\"null\"},\n" +
                             "\n" +
-                            "{\"id\":292431,\"title\":\"Love\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":286217,\"title\":\"The Martian\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":216015,\"title\":\"Fifty Shades of Grey\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":131634,\"title\":\"The Hunger Games: Mockingjay - Part 2\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":150540,\"title\":\"Inside Out\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":273248,\"title\":\"The Hateful Eight\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":140607,\"title\":\"Star Wars: The Force Awakens\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":206647,\"title\":\"Spectre\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":150689,\"title\":\"Cinderella\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":177677,\"title\":\"Mission: Impossible - Rogue Nation\",\"v_url\":\"null\"}\n" +
+                            "{\"id\":292431,\"title\":\"Love\",\"v_url\":\"null\"}\n" +
                             "]}}\n");
                     jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2015");
                     for (int i = 0; i < jsonArray.length(); i++) {
@@ -414,54 +378,6 @@ public class MovieMain extends AppCompatActivity {
                             "},\n" +
                             "{\"id\": 120467,\"title\":\"The Grand Budapest Hotel\",\"v_url\":\"null\"\n" +
                             "\n" +
-                            "},\n" +
-                            "{\"id\": 136797,\"title\":\"Need for Speed\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "{\"id\": 145220,\"title\":\"Muppets Most Wanted\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "{\"id\": 100402,\"title\":\"Captain America: The Winter Soldier\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "{\"id\": 172385,\"title\":\"Rio 2\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "{\"id\": 102382,\"title\":\"The Amazing Spider-Man 2\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "{\"id\": 195589,\"title\":\"Neighbors\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "{\"id\": 124905,\"title\":\"Godzilla\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "{\"id\": 198185,\"title\":\"Million Dollar Arm\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "{\"id\": 127585,\"title\":\"X-Men: Days of Future Past\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "{\"id\": 188161,\"title\":\"A Million Ways to Die in the West\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "{\"id\": 82702,\"title\":\"How to Train Your Dragon 2\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "{\"id\": 119450,\"title\":\"Dawn of the Planet of the Apes\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "{\"id\": 184315,\"title\":\"Hercules\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "{\"id\": 118340,\"title\":\"Guardians of the Galaxy\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "{\"id\": 138103,\"title\":\"The Expendables 3\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "{\"id\": 156022,\"title\":\"The Equalizer\",\"v_url\":\"null\"\n" +
-                            "\n" +
                             "}\n" +
                             "]}}");
                     jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2014");
@@ -486,25 +402,8 @@ public class MovieMain extends AppCompatActivity {
                             "\n" +
                             "{\"id\":68726,\"title\":\"Pacific Rim\",\"v_url\":\"null\"},\n" +
                             "\n" +
-                            "{\"id\":107846,\"title\":\"Escape Plan\",\"v_url\":\"null\"},\n" +
+                            "{\"id\":107846,\"title\":\"Escape Plan\",\"v_url\":\"null\"}\n" +
                             "\n" +
-                            "{\"id\":146233,\"title\":\"Prisoners\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":68721,\"title\":\"Iron Man 3\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":49521,\"title\":\"Man of Steel\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":152584,\"title\":\"Blue Is the Warmest Color\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":158015,\"title\":\"The Purge\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":160588,\"title\":\"Blue Jasmine\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":101299,\"title\":\"The Hunger Games: Catching Fire\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":258216,\"title\":\"Nymphomaniac: Vol. I\",\"v_url\":\"null\"},\n" +
-                            "\n" +
-                            "{\"id\":64682,\"title\":\"The Great Gatsby\",\"v_url\":\"null\"}\n" +
                             "]}}");
                     jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2013");
                     for (int i = 0; i < jsonArray.length(); i++) {
@@ -541,72 +440,7 @@ public class MovieMain extends AppCompatActivity {
                             "\n" +
                             "{\"id\": 82690,\"title\":\"Wreck-It Ralph\",\"v_url\":\"null\"\n" +
                             "\n" +
-                            "},\n" +
-                            "\n" +
-                            "{\"id\": 44833,\"title\":\"Battleship\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "\n" +
-                            "{\"id\": 114150,\"title\":\"Pitch Perfect\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "\n" +
-                            "{\"id\": 80278,\"title\":\"The Impossible\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "\n" +
-                            "{\"id\": 84892,\"title\":\"The Perks of Being a Wallflower\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "\n" +
-                            "{\"id\": 83542,\"title\":\"Cloud Atlas\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "\n" +
-                            "{\"id\": 1930,\"title\":\"The Amazing Spider-Man\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "\n" +
-                            "{\"id\": 49529,\"title\":\"John Carter\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "\n" +
-                            "{\"id\": 37724,\"title\":\"Skyfall\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "\n" +
-                            "{\"id\": 82525,\"title\":\"Savages\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "\n" +
-                            "{\"id\": 72976,\"title\":\"Lincoln\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "\n" +
-                            "{\"id\": 84199,\"title\":\"The First Time\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "\n" +
-                            "{\"id\": 62213,\"title\":\"Dark Shadows\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "\n" +
-                            "{\"id\": 82507,\"title\":\"Sinister\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "\n" +
-                            "{\"id\": 72545,\"title\":\"Journey 2: The Mysterious Island\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "\n" +
-                            "{\"id\": 76493,\"title\":\"The Dictator\",\"v_url\":\"null\"\n" +
-                            "\n" +
-                            "},\n" +
-                            "\n" +
-                            "{\"id\": 87827,\"title\":\"Life of Pi\",\"v_url\":\"null\"\n" +
-                            "\n" +
                             "}\n" +
-                            "\n" +
                             "]}}");
                     jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2012");
                     for (int i = 0; i < jsonArray.length(); i++) {
