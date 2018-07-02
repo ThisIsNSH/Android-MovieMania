@@ -1,6 +1,7 @@
 package com.travis.movie.activity;
 
 import android.animation.ObjectAnimator;
+import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -278,5 +279,17 @@ public class MovieDetail extends AppCompatActivity {
         button = findViewById(R.id.play);
         holder = findViewById(R.id.holder);
     }
+    public void webapp(View V)
+    {
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.activity_movie_detail);
+        title.setText("About Movie!");
+        // Set On ClickListener
+        title.setOnClickListener(new View.OnClickListener() {
 
+            public void onClick(View v) {
+              dialog.show();
+            }
+        });
+    }
 }

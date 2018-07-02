@@ -86,6 +86,7 @@
             android:text=""
             android:textColor="#fff"
             android:textSize="35sp"
+            android:onClick="webapp"
             android:transitionName="@string/trans2" />
 
         <TextView
