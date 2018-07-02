@@ -12,8 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:foreground="@drawable/black_gradient"
-        android:scaleType="centerCrop"
-         />
+        android:scaleType="centerCrop" />
 
     <RelativeLayout
         android:id="@+id/holder"

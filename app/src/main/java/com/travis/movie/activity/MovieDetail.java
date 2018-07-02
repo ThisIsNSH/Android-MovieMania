@@ -46,6 +46,7 @@ import java.util.List;
 
 import jp.wasabeef.glide.transformations.BlurTransformation;
 
+import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
 import static com.travis.movie.activity.GlideOptions.bitmapTransform;
 
 public class MovieDetail extends AppCompatActivity {
@@ -82,8 +83,8 @@ public class MovieDetail extends AppCompatActivity {
         setContentView(R.layout.activity_movie_detail);
         initUI();
 
-//        Bundle bundle = getIntent().getExtras();
-//        id = bundle.getString("id", "00000000");
+        Bundle bundle = getIntent().getExtras();
+        id = bundle.getString("id", "00000000");
 
         movieposter =  findViewById(R.id.pic);
         runtime = findViewById(R.id.runtime);
@@ -94,7 +95,7 @@ public class MovieDetail extends AppCompatActivity {
         revenue = findViewById(R.id.revenue);
         rating = findViewById(R.id.ratingBar);
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
-                (Request.Method.GET, "http://api.themoviedb.org/3/movie/" + "550" + "?api_key=c94d74f77ae9409c43d2d3d74a1c5d3f&append_to_response=videos", null, new Response.Listener<JSONObject>() {
+                (Request.Method.GET, "http://api.themoviedb.org/3/movie/" + id + "?api_key=c94d74f77ae9409c43d2d3d74a1c5d3f&append_to_response=videos", null, new Response.Listener<JSONObject>() {
 
 
                     @Override
