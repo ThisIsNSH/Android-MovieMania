@@ -18,6 +18,11 @@
     <string name="picker_with_custom_bg">Here a picker with default cell but custom background:</string>
     <string name="footer_text">by Ramotion inc.</string>
 
+    <string-array name="navigation_drawer_items_array">
+        <item>BLAA</item>
+        <item>BLABLA</item>
+        <item>BLALALALALAL</item>
+    </string-array>
     <string name="movie2018">{
 "movie":{
 "2018":[
