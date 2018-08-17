@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.squareup.picasso.Picasso;
 import com.travis.movie.R;
 import com.travis.movie.activity.MovieDetail;
@@ -21,28 +20,27 @@ import com.travis.movie.model.Movie;
 import java.util.List;
 
 /**
- * Created by ThisIsNSH on 6/27/2018.
+ * Created by LENOVO on 21-07-2018.
  */
 
-public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder> {
-
+public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyViewHolder> {
     List<Movie> movieList;
     Activity mContext;
 
-    public MovieAdapter(Activity mContext, List<Movie> movieList) {
+    public MovieListAdapter(Activity mContext, List<Movie> movieList) {
         this.movieList = movieList;
         this.mContext = mContext;
     }
 
     @NonNull
     @Override
-    public MovieAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_movie, parent, false);
-        return new MyViewHolder(view);
+    public MovieListAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_movie_list_adapter, parent, false);
+        return new MovieListAdapter.MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final MovieAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MovieListAdapter.MyViewHolder holder, int position) {
         final Movie movie = movieList.get(position);
         holder.title.setText(movie.getTitle());
 

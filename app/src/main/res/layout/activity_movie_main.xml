@@ -7,21 +7,6 @@
     android:background="#fff"
     android:fitsSystemWindows="true"
     tools:context="com.travis.movie.activity.MovieMain">
-
-    <com.ramotion.directselect.DSListView
-        android:id="@+id/ds_county_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/ds_list_bg"
-        android:elevation="1dp"
-        android:visibility="invisible"
-        app:picker_box_view="@id/ds_country_picker"
-        app:scale_animations="true"
-        app:scale_animations_factor="1.15"
-        app:scale_animations_pivot_center="true"
-        app:selected_index="0"
-        app:selector_background="@drawable/ds_bg_list_selector" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,22 +29,95 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp">
 
-                <com.travis.movie.extra.AdvancedExampleCountryPickerBox
-                    android:id="@+id/ds_country_picker"
+                <HorizontalScrollView
+                    android:id="@+id/years"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="-4dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="-4dp" />
+                    android:layout_toLeftOf="@id/more"
+                    android:scrollbars="none">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/ds_country_picker"
-                    android:fontFamily="@font/psb"
-                    android:text=" Movies"
-                    android:textColor="#000"
-                    android:textSize="19sp" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/m2018"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:fontFamily="@font/psb"
+                            android:text="2018"
+                            android:textColor="#000"
+                            android:textSize="19sp" />
+
+                        <TextView
+                            android:id="@+id/m2017"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:layout_toRightOf="@id/m2018"
+                            android:fontFamily="@font/psb"
+                            android:text="2017"
+                            android:textColor="#000"
+                            android:textSize="19sp" />
+
+                        <TextView
+                            android:id="@+id/m2016"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:layout_toRightOf="@id/m2017"
+                            android:fontFamily="@font/psb"
+                            android:text="2016"
+                            android:textColor="#000"
+                            android:textSize="19sp" />
+
+                        <TextView
+                            android:id="@+id/m2015"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:layout_toRightOf="@id/m2016"
+                            android:fontFamily="@font/psb"
+                            android:text="2015"
+                            android:textColor="#000"
+                            android:textSize="19sp" />
+
+                        <TextView
+                            android:id="@+id/m2014"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:layout_toRightOf="@id/m2015"
+                            android:fontFamily="@font/psb"
+                            android:text="2014"
+                            android:textColor="#000"
+                            android:textSize="19sp" />
+
+                        <TextView
+                            android:id="@+id/m2013"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:layout_toRightOf="@id/m2014"
+                            android:fontFamily="@font/psb"
+                            android:text="2013"
+                            android:textColor="#000"
+                            android:textSize="19sp" />
+
+                        <TextView
+                            android:id="@+id/m2012"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:layout_toRightOf="@id/m2013"
+                            android:fontFamily="@font/psb"
+                            android:text="2012"
+                            android:textColor="#000"
+                            android:textSize="19sp" />
+                    </LinearLayout>
+                </HorizontalScrollView>
 
                 <TextView
                     android:id="@+id/more"
@@ -67,7 +125,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="20sp"
+                    android:layout_marginRight="16dp"
                     android:fontFamily="@font/ps"
                     android:text="More"
                     android:textColor="#555"
@@ -121,7 +179,6 @@
                 android:layout_marginBottom="8dp"
                 android:orientation="horizontal"
                 android:visibility="gone" />
-
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/movie2012"
                 android:layout_width="match_parent"

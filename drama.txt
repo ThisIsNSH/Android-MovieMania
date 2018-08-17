@@ -1,0 +1,13 @@
+{
+"genre":{
+"drama":[
+{"id":82695,"title":"Les Miserables","v_url":"null","poster_path":"/qEsrAHoxj746FRb7OLGYjrx1AI3.jpg"},
+
+{"id":58595,"title":"Snow White And The Huntsman","v_url":"null","poster_path":"/qQ3vWrNroNSJyPGRjsrgzNghTux.jpg"},
+
+{"id":68718,"title":"Django Unchained","v_url":"null","poster_path":"/5WJnxuw41sddupf8cwOxYftuvJG.jpg"},
+
+{"id":84892,"title":"The Perks Of Being a Wallflower","v_url":"null","poster_path":"/cyNQLnHnXZcTUDXVVSEYmquOTOI.jpg"},
+
+{"id":77877,"title":"The Lucky One","v_url":"null","poster_path":"/ug0WQaS1echV9BQoSeL2im9I3hk.jpg"}
+]}}

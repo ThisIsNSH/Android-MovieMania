@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="ExtraText">
-        <activity android:name=".activity.Drawer">
+        <activity android:name=".activity.MovieCategories">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,6 +28,7 @@
         <activity android:name=".extra.download1" />
         <activity android:name=".extra.video" />
         <activity android:name=".activity.MovieDetail" android:exported="true"/>
+        <activity android:name=".activity.Drawer"/>
         <activity android:name=".activity.MovieMain"/>
     </application>
 </manifest>

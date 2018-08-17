@@ -1,5 +1,5 @@
 package com.travis.movie.activity;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
@@ -9,7 +9,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -19,14 +18,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.ramotion.directselect.DSListView;
 import com.travis.movie.R;
-import com.travis.movie.adapter.AdvancedExampleCountryAdapter;
 import com.travis.movie.adapter.MovieAdapter;
-import com.travis.movie.extra.AdvancedExampleCountryPickerBox;
 import com.travis.movie.extra.download1;
 import com.travis.movie.extra.video;
-import com.travis.movie.model.AdvancedExampleCountryPOJO;
 import com.travis.movie.model.Movie;
 
 import org.json.JSONArray;
@@ -35,18 +30,12 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class MovieMain extends AppCompatActivity {
 
     LinearLayoutManager linearLayoutManager2018, linearLayoutManager2017, linearLayoutManager2016, linearLayoutManager2015, linearLayoutManager2014, linearLayoutManager2013, linearLayoutManager2012;
-
-    AdvancedExampleCountryPickerBox ds_country_picker;
-    DSListView ds_county_list;
-
     Movie movieObject;
     JSONArray jsonArray;
     JSONObject jsonObject;
-
     MovieAdapter movieAdapter, movieAdapter2018, movieAdapter2017, movieAdapter2016, movieAdapter2015, movieAdapter2014, movieAdapter2013, movieAdapter2012;
     List<Movie> movieList, movieList2018, movieList2017, movieList2016, movieList2015, movieList2014, movieList2013, movieList2012;
     RecyclerView movie, movie2018, movie2017, movie2016, movie2015, movie2014, movie2013, movie2012;
@@ -59,10 +48,7 @@ public class MovieMain extends AppCompatActivity {
         setContentView(R.layout.activity_movie_main);
         initUI();
     }
-
     public void initUI() {
-        ds_country_picker = findViewById(R.id.ds_country_picker);
-
         movie2017 = findViewById(R.id.movie2017);
         movie2018 = findViewById(R.id.movie2018);
         movie2016 = findViewById(R.id.movie2016);
@@ -78,19 +64,11 @@ public class MovieMain extends AppCompatActivity {
         movie2016.setVisibility(View.VISIBLE);
         movie2017.setVisibility(View.VISIBLE);
         movie2018.setVisibility(View.VISIBLE);
-
-        ds_county_list = findViewById(R.id.ds_county_list);
+//        ds_county_list = findViewById(R.id.ds_county_list);
         setupData();
-
     }
-
+    @SuppressLint("ResourceAsColor")
     public void setupData() {
-
-        List<AdvancedExampleCountryPOJO> exampleDataSet = AdvancedExampleCountryPOJO.getExampleDataset();
-        final ArrayAdapter<AdvancedExampleCountryPOJO> adapter = new AdvancedExampleCountryAdapter(
-                this, R.layout.advanced_example_country_list_item, exampleDataSet);
-        DSListView<AdvancedExampleCountryPOJO> pickerView = findViewById(R.id.ds_county_list);
-        pickerView.setAdapter(adapter);
 
         movieList = new ArrayList<>();
         movieList2018 = new ArrayList<>();
@@ -155,93 +133,170 @@ public class MovieMain extends AppCompatActivity {
         movieAdapter2013.notifyDataSetChanged();
         getData(2012);
         movieAdapter2012.notifyDataSetChanged();
+        final TextView m18 = findViewById(R.id.m2018);
+        final TextView m17 = findViewById(R.id.m2017);
+        final TextView m16 = findViewById(R.id.m2016);
+        final TextView m15 = findViewById(R.id.m2015);
+        final TextView m14 = findViewById(R.id.m2014);
+        final TextView m13 = findViewById(R.id.m2013);
+        final TextView m12 = findViewById(R.id.m2012);
 
-        ds_country_picker.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+        movie2018.setVisibility(View.VISIBLE);
+        movie2017.setVisibility(View.GONE);
+        movie2016.setVisibility(View.GONE);
+        movie2015.setVisibility(View.GONE);
+        movie2014.setVisibility(View.GONE);
+        movie2013.setVisibility(View.GONE);
+        movie2012.setVisibility(View.GONE);
+        m18.setTextColor(R.color.black);
+        m17.setTextColor(R.color.year);
+        m16.setTextColor(R.color.year);
+        m15.setTextColor(R.color.year);
+        m14.setTextColor(R.color.year);
+        m13.setTextColor(R.color.year);
+        m12.setTextColor(R.color.year);
+        m18.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
-                AdvancedExampleCountryPickerBox a = (AdvancedExampleCountryPickerBox) v;
-                int a1;
+            public void onClick(View v) {
+                movie2018.setVisibility(View.VISIBLE);
+                movie2017.setVisibility(View.GONE);
+                movie2016.setVisibility(View.GONE);
+                movie2015.setVisibility(View.GONE);
+                movie2014.setVisibility(View.GONE);
+                movie2013.setVisibility(View.GONE);
+                movie2012.setVisibility(View.GONE);
+                m18.setTextColor(R.color.black);
+                m17.setTextColor(R.color.year);
+                m16.setTextColor(R.color.year);
+                m15.setTextColor(R.color.year);
+                m14.setTextColor(R.color.year);
+                m13.setTextColor(R.color.year);
+                m12.setTextColor(R.color.year);
+            }
+        });
+        m17.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                movie2018.setVisibility(View.GONE);
+                movie2017.setVisibility(View.VISIBLE);
+                movie2016.setVisibility(View.GONE);
+                movie2015.setVisibility(View.GONE);
+                movie2014.setVisibility(View.GONE);
+                movie2013.setVisibility(View.GONE);
+                movie2012.setVisibility(View.GONE);
+                m18.setTextColor(R.color.year);
+                m17.setTextColor(R.color.black);
+                m16.setTextColor(R.color.year);
+                m15.setTextColor(R.color.year);
+                m14.setTextColor(R.color.year);
+                m13.setTextColor(R.color.year);
+                m12.setTextColor(R.color.year);
+            }
+        });
 
-                System.out.println(a.text.getText());
-                if (a.text.getText().toString().equals(""))
-                    a1 = 0;
-                else
-                    a1 = Integer.parseInt(a.text.getText().toString());
+        m16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-                switch (a1) {
-                    case 2018:
-                        movie2018.setVisibility(View.VISIBLE);
-                        movie2017.setVisibility(View.GONE);
-                        movie2016.setVisibility(View.GONE);
-                        movie2015.setVisibility(View.GONE);
-                        movie2014.setVisibility(View.GONE);
-                        movie2013.setVisibility(View.GONE);
-                        movie2012.setVisibility(View.GONE);
-                        break;
-                    case 2017:
-                        movie2018.setVisibility(View.GONE);
-                        movie2017.setVisibility(View.VISIBLE);
-                        movie2016.setVisibility(View.GONE);
-                        movie2015.setVisibility(View.GONE);
-                        movie2014.setVisibility(View.GONE);
-                        movie2013.setVisibility(View.GONE);
-                        movie2012.setVisibility(View.GONE);
-                        break;
-                    case 2016:
-                        movie2018.setVisibility(View.GONE);
-                        movie2017.setVisibility(View.GONE);
-                        movie2016.setVisibility(View.VISIBLE);
-                        movie2015.setVisibility(View.GONE);
-                        movie2014.setVisibility(View.GONE);
-                        movie2013.setVisibility(View.GONE);
-                        movie2012.setVisibility(View.GONE);
-                        break;
-                    case 2015:
-                        movie2018.setVisibility(View.GONE);
-                        movie2017.setVisibility(View.GONE);
-                        movie2016.setVisibility(View.GONE);
-                        movie2015.setVisibility(View.VISIBLE);
-                        movie2014.setVisibility(View.GONE);
-                        movie2013.setVisibility(View.GONE);
-                        movie2012.setVisibility(View.GONE);
-                        break;
-                    case 2014:
-                        movie2018.setVisibility(View.GONE);
-                        movie2017.setVisibility(View.GONE);
-                        movie2016.setVisibility(View.GONE);
-                        movie2015.setVisibility(View.GONE);
-                        movie2014.setVisibility(View.VISIBLE);
-                        movie2013.setVisibility(View.GONE);
-                        movie2012.setVisibility(View.GONE);
-                        break;
-                    case 2013:
-                        movie2018.setVisibility(View.GONE);
-                        movie2017.setVisibility(View.GONE);
-                        movie2016.setVisibility(View.GONE);
-                        movie2015.setVisibility(View.GONE);
-                        movie2014.setVisibility(View.GONE);
-                        movie2013.setVisibility(View.VISIBLE);
-                        movie2012.setVisibility(View.GONE);
-                        break;
-                    case 2012:
-                        movie2018.setVisibility(View.GONE);
-                        movie2017.setVisibility(View.GONE);
-                        movie2016.setVisibility(View.GONE);
-                        movie2015.setVisibility(View.GONE);
-                        movie2014.setVisibility(View.GONE);
-                        movie2013.setVisibility(View.GONE);
-                        movie2012.setVisibility(View.VISIBLE);
-                        break;
-                    default:
-                        movie2018.setVisibility(View.VISIBLE);
-                        movie2017.setVisibility(View.GONE);
-                        movie2016.setVisibility(View.GONE);
-                        movie2015.setVisibility(View.GONE);
-                        movie2014.setVisibility(View.GONE);
-                        movie2013.setVisibility(View.GONE);
-                        movie2012.setVisibility(View.GONE);
-                        break;
-                }
+                movie2018.setVisibility(View.GONE);
+                movie2017.setVisibility(View.GONE);
+                movie2016.setVisibility(View.VISIBLE);
+                movie2015.setVisibility(View.GONE);
+                movie2014.setVisibility(View.GONE);
+                movie2013.setVisibility(View.GONE);
+                movie2012.setVisibility(View.GONE);
+                m18.setTextColor(R.color.year);
+                m17.setTextColor(R.color.year);
+                m16.setTextColor(R.color.black);
+                m15.setTextColor(R.color.year);
+                m14.setTextColor(R.color.year);
+                m13.setTextColor(R.color.year);
+                m12.setTextColor(R.color.year);
+            }
+        });
+
+        m15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                movie2018.setVisibility(View.GONE);
+                movie2017.setVisibility(View.GONE);
+                movie2016.setVisibility(View.GONE);
+                movie2015.setVisibility(View.VISIBLE);
+                movie2014.setVisibility(View.GONE);
+                movie2013.setVisibility(View.GONE);
+                movie2012.setVisibility(View.GONE);
+                m18.setTextColor(R.color.year);
+                m17.setTextColor(R.color.year);
+                m16.setTextColor(R.color.year);
+                m15.setTextColor(R.color.black);
+                m14.setTextColor(R.color.year);
+                m13.setTextColor(R.color.year);
+                m12.setTextColor(R.color.year);
+            }
+        });
+
+
+        m14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                movie2018.setVisibility(View.GONE);
+                movie2017.setVisibility(View.GONE);
+                movie2016.setVisibility(View.GONE);
+                movie2015.setVisibility(View.GONE);
+                movie2014.setVisibility(View.VISIBLE);
+                movie2013.setVisibility(View.GONE);
+                movie2012.setVisibility(View.GONE);
+                m18.setTextColor(R.color.year);
+                m17.setTextColor(R.color.year);
+                m16.setTextColor(R.color.year);
+                m15.setTextColor(R.color.year);
+                m14.setTextColor(R.color.black);
+                m13.setTextColor(R.color.year);
+                m12.setTextColor(R.color.year);
+            }
+        });
+
+        m13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                movie2018.setVisibility(View.GONE);
+                movie2017.setVisibility(View.GONE);
+                movie2016.setVisibility(View.GONE);
+                movie2015.setVisibility(View.GONE);
+                movie2014.setVisibility(View.GONE);
+                movie2013.setVisibility(View.VISIBLE);
+                movie2012.setVisibility(View.GONE);
+                m18.setTextColor(R.color.year);
+                m17.setTextColor(R.color.year);
+                m16.setTextColor(R.color.year);
+                m15.setTextColor(R.color.year);
+                m14.setTextColor(R.color.year);
+                m13.setTextColor(R.color.black);
+                m12.setTextColor(R.color.year);
+            }
+        });
+
+        m12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                movie2018.setVisibility(View.GONE);
+                movie2017.setVisibility(View.GONE);
+                movie2016.setVisibility(View.GONE);
+                movie2015.setVisibility(View.GONE);
+                movie2014.setVisibility(View.GONE);
+                movie2013.setVisibility(View.GONE);
+                movie2012.setVisibility(View.VISIBLE);
+                m18.setTextColor(R.color.year);
+                m17.setTextColor(R.color.year);
+                m16.setTextColor(R.color.year);
+                m15.setTextColor(R.color.year);
+                m14.setTextColor(R.color.year);
+                m13.setTextColor(R.color.year);
+                m12.setTextColor(R.color.black);
             }
         });
 
@@ -297,7 +352,7 @@ public class MovieMain extends AppCompatActivity {
                             "\n" +
                             "{\"id\":346364,\"title\":\"It\",\"v_url\":\"null\"},\n" +
                             "\n" +
-                            "{\"id\":337170,\"title\":\"American Made\",\"v_url\":\"null\"}"+
+                            "{\"id\":337170,\"title\":\"American Made\",\"v_url\":\"null\"}" +
                             "]}}\n");
                     jsonArray = jsonObject.getJSONObject("movie").getJSONArray("2017");
                     for (int i = 0; i < jsonArray.length(); i++) {
@@ -488,7 +543,7 @@ public class MovieMain extends AppCompatActivity {
         }
 
         public void JSON() {
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, "https://api.themoviedb.org/3/movie/3085?api_key=c94d74f77ae9409c43d2d3d74a1c5d3f", null, new Response.Listener<JSONObject>() {
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, "https://api.themoviedb.org/3/movie/3085?api_key="+getString(R.string.api_key), null, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject response) {
                     try {

@@ -1,0 +1,16 @@
+{
+"genre":{
+"action":[
+{"id":99861,"title":"Avengers: Age of Ultron","v_url":"null","poster_path":"/qJawKUQcIBha507UahUlX0keOT7.jpg"
+},
+
+{"id":102899,"title":"Ant-Man","v_url":"null","poster_path":"/tdKbDECJQ3JmYaMubNaKFM1mgcY.jpg"},
+
+{"id":140607,"title":"Star Wars: The Force Awakens","v_url":"null","poster_path":"/iTQHKziZy9pAAY4hHEDCGPaOvFC.jpg"},
+
+{"id":76341,"title":"Mad Max: Fury Road","v_url":"null","poster_path":"/jZowUf4okNYuSlgj5iURE7CDMho.jpg"},
+
+{"id":177677,"title":"Mission: Impossible - Rogue Nation","v_url":"null","poster_path":"/gwyJPIhCK4Xz2WogeBnhCSQfUek.jpg"}
+]}}
+
+

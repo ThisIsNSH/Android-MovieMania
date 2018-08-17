@@ -1,0 +1,15 @@
+{
+"genre":{
+"comedy":[
+{"id":72105,"title":"Ted","v_url":"null","poster_path":"/uHKT9b6ptLpttGHlUF95sKQbtqF.jpg"},
+
+{"id":195589,"title":"Neighbours","v_url":"null","poster_path":"/iBPR2I6kByq7ZwBnwXVrYOHRj4U.jpg"},
+
+{"id":116149,"title":"Paddington","v_url":"null","poster_path":"/fn8nOJd72KmhSOWm1E12EiC3JgZ.jpg"},
+
+{"id":293660,"title":"Deadpool","v_url":"null","poster_path":"/30c5jO7YEXuF8KiWXLg9m28GWDA.jpg"},
+
+{"id":383498,"title":"Deadpool2","v_url":"null","poster_path":"/30c5jO7YEXuF8KiWXLg9m28GWDA.jpg"}
+]}}
+
+
