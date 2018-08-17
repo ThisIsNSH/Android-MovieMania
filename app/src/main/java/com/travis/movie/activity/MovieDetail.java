@@ -98,7 +98,7 @@ public class MovieDetail extends AppCompatActivity {
         revenue = findViewById(R.id.revenue);
         rating = findViewById(R.id.ratingBar);
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
-                (Request.Method.GET, "http://api.themoviedb.org/3/movie/" + id + "?api_key=c94d74f77ae9409c43d2d3d74a1c5d3f&append_to_response=videos", null, new Response.Listener<JSONObject>() {
+                (Request.Method.GET, "http://api.themoviedb.org/3/movie/" + id + "?api_key="+getString(R.string.api_key)+"&append_to_response=videos", null, new Response.Listener<JSONObject>() {
 
 
                     @Override

@@ -1,0 +1,15 @@
+{
+"genre":{
+"romantic":[
+{"id":292431,"title":"Love","v_url":"null","poster_path":"/dw7Lbq7luiH11cbL5MlJwUdxkUk.jpg"},
+
+{"id":150689,"title":"Cinderella","v_url":"null","poster_path":"/2i0JH5WqYFqki7WDhUW56Sg0obh.jpg"},
+
+{"id":301875,"title":"Equals","v_url":"null","poster_path":"/hhTg6vU9gmItu01Ac6r1U4ZdPGH.jpg"},
+
+{"id":296096,"title":"Me Before You","v_url":"null","poster_path":"/oN5lELHH5Xheiy0YdhnY3JB4hx2.jpg"},
+
+{"id":339419,"title":"Loving","v_url":"null","poster_path":"/teNPeDIRGWxtvMaJsNa7lw5IgiL.jpg"}
+]}}
+
+

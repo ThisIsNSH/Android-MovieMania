@@ -1,0 +1,15 @@
+{
+"genre":{
+"adventure":[
+{"id":83542,"title":"Cloud Atlas","v_url":"null","poster_path":"/8VNiyIp67ZxhpNgdrwACW0jgvP2.jpg"},
+
+{"id":50620,"title":"The Twilight Saga: Breaking Dawn - Part 2","v_url":"null","poster_path":"/2o4zgGjVryMOPdNqLZWsSPqRkOH.jpg"},
+
+{"id":351286,"title":"Jurassic World: Fallen Kingdom","v_url":"null","poster_path":"/qIm2nHXLpBBdMxi8dvfrnDkBUDh.jpg"},
+
+{"id":449749,"title":"The Leisure Seeker","v_url":"null","poster_path":"/pJfftuCDhK1DFvzBUIfpykXp20U.jpg"},
+
+{"id":300668,"title":"Annihilation","v_url":"null","poster_path":"/d3qcpfNwbAMCNqWDHzPQsUYiUgS.jpg"}
+]}}
+
+
